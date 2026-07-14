@@ -88,7 +88,7 @@ function App() {
       {/* Navbar */}
       <nav className="navbar container">
         <div className="nav-logo">
-          <img src={logoImg} alt="Rajit Karunakaran Logo" style={{ height: '80px', objectFit: 'contain' }} />
+          <img src={logoImg} alt="Rajit Karunakaran Logo" style={{ height: '50px', objectFit: 'contain' }} />
         </div>
         <div className="nav-links">
           <a href="#" className="active">Home</a>
@@ -141,10 +141,6 @@ function App() {
             <div className="image-bg-shape"></div>
             <img src={bannerImg} alt="Rajit Karunakaran" className="hero-image" />
             
-            {/* Particles */}
-            <div className="particle p-1"></div>
-            <div className="particle p-2"></div>
-            <div className="particle p-3"></div>
           </div>
         </div>
         <div className="hero-wave"></div>
@@ -533,7 +529,7 @@ function App() {
           <div className="footer-grid">
             <div className="footer-col branding-col">
               <div className="footer-logo">
-                <img src={logoImg} alt="Rajit Karunakaran Logo" style={{ height: '180px', objectFit: 'contain' }} />
+                <img src={logoImg} alt="Rajit Karunakaran Logo" style={{ height: '100px', objectFit: 'contain' }} />
               </div>
               <p className="footer-desc">
                 Transforming organizations and inspiring leaders across the globe. Let's build the future of your business together.
@@ -549,10 +545,10 @@ function App() {
             <div className="footer-col">
               <h4>Quick Links</h4>
               <ul>
-                <li><a href="#about">About Rajit</a></li>
-                <li><a href="#expertise">Expertise</a></li>
-                <li><a href="#milestones">Milestones</a></li>
-                <li><a href="#books">Books</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#about">The Mentor</a></li>
+                <li><a href="#expertise">Game Changers</a></li>
+                <li><a href="#books">Blogs</a></li>
               </ul>
             </div>
             
