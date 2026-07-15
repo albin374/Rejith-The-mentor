@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Navbar from './Navbar';
 import { 
   ArrowRight,
   BookOpen,
@@ -15,8 +16,19 @@ import {
   Mail,
   Phone,
   Globe,
-  Quote
+  Quote,
+  Menu,
+  X,
+  Building2,
+  Brain,
+  Gauge,
+  BadgeCheck
 } from 'lucide-react';
+import { Routes, Route } from 'react-router-dom';
+import AboutMentor from './AboutMentor';
+import ProgramsAndServices from './ProgramsAndServices';
+import AuthorPage from './AuthorPage';
+import RecognitionPage from './RecognitionPage';
 import './App.css';
 import rajitPortrait from './assets/rajit_portrait.png';
 import bannerImg from './assets/media/WhatsApp Image 2026-07-10 at 19.42.10.jpeg';
@@ -31,7 +43,7 @@ import img6 from './assets/media/WhatsApp Image 2026-07-10 at 19.41.58.jpeg';
 import img7 from './assets/media/WhatsApp Image 2026-07-10 at 19.42.03.jpeg';
 import imgSpeaking from './assets/media/WhatsApp Image 2026-07-10 at 19.42.19.jpeg';
 import imgCorporate from './assets/media/WhatsApp Image 2026-07-10 at 19.42.33 (1).jpeg';
-import imgAwards from './assets/media/WhatsApp Image 2026-07-10 at 19.42.41.jpeg';
+import imgAwards from './assets/media/rec_banner_image_3.jpeg';
 import imgMentoring from './assets/media/WhatsApp Image 2026-07-10 at 19.42.38.jpeg';
 import imgLeadership from './assets/media/WhatsApp Image 2026-07-10 at 19.42.38 (1).jpeg';
 import imgConsulting from './assets/media/WhatsApp Image 2026-07-10 at 19.42.36 (1).jpeg';
@@ -40,10 +52,38 @@ import book1Img from './assets/media/The House of Mirrors Tales from Corporate C
 import book2Img from './assets/media/Fearless or Shameless.jpg';
 import book3Img from './assets/media/Making of a Sensible Consultant.png';
 import logoImg from './assets/media/logo.png_2K_202607141547.png';
+import hpLogo1 from './assets/media/homepage logo (1).png';
+import hpLogo2 from './assets/media/homepage logo (2).png';
+import hpLogo3 from './assets/media/homepage logo (3).png';
+import hpLogo4 from './assets/media/homepage logo (4).png';
+import hpLogo5 from './assets/media/homepage logo (5).png';
+import introImg from './assets/media/WhatsApp Image 2026-07-10 at 19.42.28.jpeg';
+import { Link as RouterLink } from 'react-router-dom';
 
 function App() {
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
+
+  const initialImpactData = [
+    { id: 1, number: '33+', text: 'YEARS OF\nLEGACY', icon: null },
+    { id: 2, number: '600+', text: 'INSTITUTIONS\nIMPACTED', icon: <Building2 size={32} /> },
+    { id: 3, number: '47K+', text: 'STUDENTS\nMENTORED', icon: null },
+    { id: 4, number: '120+', text: 'CORPORATE\nKEYNOTES', icon: null },
+  ];
+  const [impactCards, setImpactCards] = useState(initialImpactData);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setImpactCards(prev => {
+        const newArr = [...prev];
+        const first = newArr.shift();
+        newArr.push(first);
+        return newArr;
+      });
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const testimonials = [
     {
@@ -85,56 +125,32 @@ function App() {
         <div className="blob blob-2"></div>
       </div>
 
-      {/* Navbar */}
-      <nav className="navbar container">
-        <div className="nav-logo">
-          <img src={logoImg} alt="Rajit Karunakaran Logo" style={{ height: '50px', objectFit: 'contain' }} />
-        </div>
-        <div className="nav-links">
-          <a href="#" className="active">Home</a>
-          <a href="#about">The Mentor</a>
-          <a href="#expertise">Game Changers</a>
-          <a href="#books">Blogs</a>
-          <a href="#contact">Contact</a>
-        </div>
-      </nav>
+      <Navbar />
 
-      {/* Hero Section */}
       <section className="hero">
-        <div className="container hero-grid">
+        <div className="container hero-container hero-grid">
           <div className="hero-content">
-            <h1>Rajit<br />Karunakaran</h1>
-            <h3>Founder & CEO, ProBiz Knowledge Center</h3>
-            <p>
-              A TEDx Speaker, International Management Consultant, Mentor, Author and Organizational Development Expert.
+            <h4 className="hero-credentials" style={{ fontWeight: 600, color: 'var(--primary-dark)', marginBottom: '0.5rem', textTransform: 'uppercase', letterSpacing: '1px' }}>
+              Rajit Karunakaran
+            </h4>
+            <p className="hero-roles" style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', marginBottom: '1.5rem', fontWeight: 500 }}>
+              TEDx Speaker | International Strategist | Management Consultant | Leadership Coach | Corporate Trainer | Author
+            </p>
+            <h1 style={{ fontSize: '3.5rem', lineHeight: 1.1, marginBottom: '1.5rem' }}>
+              Shape the Minds <br /> That Shape Tomorrow.
+            </h1>
+            <p className="hero-tagline" style={{ fontSize: '1.2rem', fontStyle: 'italic', marginBottom: '2.5rem', color: 'var(--text-secondary)' }}>
+              "Don't prepare people merely for today's jobs; prepare them to thrive in tomorrow's world."
             </p>
             <div className="hero-btns">
-              <a href="#about" className="btn btn-primary">
-                Explore Journey
-              </a>
-              <a href="#contact" className="btn btn-secondary btn-outline">
-                Book a Session
+              <RouterLink to="/contact" className="btn btn-primary">
+                Book a Strategic Session
+              </RouterLink>
+              <a href="#profile" className="btn btn-secondary btn-outline">
+                Download Executive Profile
               </a>
             </div>
             
-            <div className="hero-stats">
-              <div className="glass-card stat-card">
-                <h4>32+</h4>
-                <p>Years<br />Experience</p>
-              </div>
-              <div className="glass-card stat-card">
-                <h4>600+</h4>
-                <p>Keynote<br />Talks</p>
-              </div>
-              <div className="glass-card stat-card">
-                <h4><span style={{color: '#E53E3E'}}>TED</span>x</h4>
-                <p>Speaker</p>
-              </div>
-              <div className="glass-card stat-card">
-                <h4>3</h4>
-                <p>Published<br />Books</p>
-              </div>
-            </div>
           </div>
           
           <div className="hero-image-wrapper">
@@ -145,6 +161,26 @@ function App() {
         </div>
         <div className="hero-wave"></div>
       </section>
+
+      {/* Logo Carousel Section */}
+      <section className="logo-carousel-section">
+        <div className="carousel-track-container">
+          <div className="carousel-track">
+            <img src={hpLogo1} alt="Cyber Ambassador" className="carousel-logo" />
+            <img src={hpLogo2} alt="Regional Mentor" className="carousel-logo" />
+            <img src={hpLogo3} alt="Global Mentor" className="carousel-logo" />
+            <img src={hpLogo4} alt="Startup Advisor" className="carousel-logo" />
+            <img src={hpLogo5} alt="Director" className="carousel-logo" />
+            {/* Duplicated for infinite loop effect */}
+            <img src={hpLogo1} alt="Cyber Ambassador" className="carousel-logo" />
+            <img src={hpLogo2} alt="Regional Mentor" className="carousel-logo" />
+            <img src={hpLogo3} alt="Global Mentor" className="carousel-logo" />
+            <img src={hpLogo4} alt="Startup Advisor" className="carousel-logo" />
+            <img src={hpLogo5} alt="Director" className="carousel-logo" />
+          </div>
+        </div>
+      </section>
+
 
       {/* About Section */}
       <section id="about" className="about-section">
@@ -174,6 +210,134 @@ function App() {
         </div>
       </section>
 
+      {/* Introduction Section (New) */}
+      <section className="intro-section">
+        <div className="intro-container">
+          {/* Left: Image with floating box */}
+          <div className="intro-image-wrapper">
+            <div className="intro-image-container">
+              <img src={introImg} alt="Rajit Karunakaran" className="intro-image" />
+            </div>
+            <div className="legacy-box">
+              <span className="legacy-number">33+</span>
+              <span className="legacy-text">YEARS OF LEGACY</span>
+            </div>
+          </div>
+
+          {/* Right: Content */}
+          <div className="intro-content">
+            <h2 className="intro-title">Architecting Sustainable Growth</h2>
+            
+            <p className="intro-desc">
+              With over 33 years of distinguished corporate and advisory experience, Rajit Karunakaran bridges the gap between institutional potential and global excellence.
+            </p>
+
+            <div className="intro-highlight">
+              <p>
+                As a trusted consultant to governments and high-growth organizations, Rajit designs architectures for sustainable growth. His work focuses on transforming leadership mindsets and preparing the workforce for the inevitable shifts caused by technological disruption.
+              </p>
+            </div>
+
+            <div className="intro-features">
+              <div className="intro-feature-card">
+                <div className="feature-icon-wrapper">
+                  <Building2 size={18} />
+                </div>
+                <span>Institutional Dev</span>
+              </div>
+              <div className="intro-feature-card">
+                <div className="feature-icon-wrapper">
+                  <Lightbulb size={18} />
+                </div>
+                <span>AI Coaching</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Empirical Impact Section */}
+      <section className="impact-section">
+        <div className="impact-header">
+          <h3 className="impact-title">Empirical Impact</h3>
+          <div className="impact-line"></div>
+        </div>
+
+        <div className="impact-grid">
+          {impactCards.map((card, index) => {
+            const isCenter = index === 1; // Highlight the second card
+            return (
+              <div 
+                key={card.id} 
+                className={`impact-card ${isCenter ? 'institutions' : 'legacy'}`}
+              >
+                {isCenter && card.icon && (
+                  <div className="impact-icon" style={{ marginBottom: '1.5rem', color: 'rgba(255,255,255,0.6)' }}>
+                    {card.icon}
+                  </div>
+                )}
+                <div className="impact-number" style={{ color: isCenter ? 'white' : '#005a87' }}>
+                  {card.number}
+                </div>
+                <div className="impact-text" style={{ color: isCenter ? 'rgba(255,255,255,0.9)' : '#94a3b8' }}>
+                  {card.text.split('\n').map((line, i) => (
+                    <span key={i}>{line}<br/></span>
+                  ))}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </section>
+
+      {/* Masterclass Section */}
+      <section className="masterclass-section">
+        <div className="container">
+          <div className="masterclass-card">
+            {/* Left Side */}
+            <div className="masterclass-left">
+              <div className="masterclass-left-content">
+                <div className="masterclass-logo-icon">
+                  <Brain size={56} />
+                </div>
+                <h2>Masterclass Series</h2>
+                <p>COGNITIVE TRANSFORMATION</p>
+              </div>
+            </div>
+            {/* Right Side */}
+            <div className="masterclass-right">
+              <div className="masterclass-pill">
+                <BadgeCheck size={14} /> FLAGSHIP PROGRAM
+              </div>
+              <h2 className="masterclass-title">Futureproof Careers: Surviving the AI Disruption</h2>
+              <p className="masterclass-desc">
+                A rigorous masterclass designed for corporate leaders, educators, and career-builders. Learn to leverage AI as a cognitive multiplier rather than a replacement, and develop the human-centric skills that machines cannot replicate.
+              </p>
+              
+              <div className="masterclass-features">
+                <div className="mc-feature">
+                  <div className="mc-icon"><Gauge size={20} /></div>
+                  <div className="mc-text">
+                    <h4>Accelerated Learning</h4>
+                    <p>Core AI concepts<br/>in 6 hours</p>
+                  </div>
+                </div>
+                <div className="mc-feature">
+                  <div className="mc-icon"><BadgeCheck size={20} /></div>
+                  <div className="mc-text">
+                    <h4>Global Certification</h4>
+                    <p>Strategic Advisor<br/>Credential</p>
+                  </div>
+                </div>
+              </div>
+
+              <a href="#" className="masterclass-btn">
+                Explore the Masterclass <ArrowRight size={18} />
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
       {/* Milestones & Achievements */}
       <section id="milestones" className="dark-section">
         <div className="container">
@@ -250,149 +414,13 @@ function App() {
         </div>
       </section>
 
-      {/* Areas of Expertise */}
-      <section id="expertise" className="expertise-section">
-        <div className="expertise-bg-elements">
-          <div className="wave-pattern"></div>
-          <div className="dot-texture"></div>
-          <div className="floating-shape shape-1"></div>
-          <div className="floating-shape shape-2"></div>
-        </div>
-        <div className="container relative z-10">
-          <div className="section-header">
-            <h2>Areas of Expertise</h2>
-            <p className="subtitle">
-              Delivering strategic guidance, innovative solutions, and transformative learning experiences across industries.
-            </p>
-          </div>
-          
-          <div className="expertise-bento-grid">
-            <div className="glass-card exp-card" style={{ gridColumn: 'span 4' }}>
-              <div className="exp-icon-wrap"><Briefcase size={28} /></div>
-              <h3>Management Consulting</h3>
-              <p>Driving operational excellence and strategic growth.</p>
-            </div>
-            
-            <div className="glass-card exp-card" style={{ gridColumn: 'span 4' }}>
-              <div className="exp-icon-wrap"><TrendingUp size={28} /></div>
-              <h3>Organizational Development</h3>
-              <p>Fostering resilient, high-performing corporate cultures.</p>
-            </div>
-            
-            <div className="glass-card exp-card" style={{ gridColumn: 'span 4' }}>
-              <div className="exp-icon-wrap"><Lightbulb size={28} /></div>
-              <h3>Design Thinking</h3>
-              <p>Solving complex challenges with human-centric innovation.</p>
-            </div>
-
-            <div className="glass-card exp-card" style={{ gridColumn: 'span 6' }}>
-              <div className="exp-icon-wrap"><Award size={28} /></div>
-              <h3>Business Excellence</h3>
-              <p>Establishing frameworks that guarantee sustained industry leadership.</p>
-            </div>
-
-            <div className="glass-card exp-card" style={{ gridColumn: 'span 6' }}>
-              <div className="exp-icon-wrap"><MonitorPlay size={28} /></div>
-              <h3>Corporate Training</h3>
-              <p>Empowering teams with actionable skills for modern markets.</p>
-            </div>
-
-            <div className="glass-card exp-card" style={{ gridColumn: 'span 4' }}>
-              <div className="exp-icon-wrap"><Target size={28} /></div>
-              <h3>Leadership Development</h3>
-              <p>Cultivating visionary leaders for tomorrow's challenges.</p>
-            </div>
-
-            <div className="glass-card exp-card" style={{ gridColumn: 'span 8' }}>
-              <div className="exp-icon-wrap"><Users size={28} /></div>
-              <h3>Mentoring & Coaching</h3>
-              <p>Personalized guidance to unlock ultimate professional potential.</p>
-            </div>
-
-            <div className="glass-card exp-card" style={{ gridColumn: 'span 8' }}>
-              <div className="exp-icon-wrap"><BookOpen size={28} /></div>
-              <h3>Faculty Development</h3>
-              <p>Elevating academic standards and teaching methodologies.</p>
-            </div>
-
-            <div className="glass-card exp-card" style={{ gridColumn: 'span 4' }}>
-              <div className="exp-icon-wrap"><Link size={28} /></div>
-              <h3>Startup Advisory</h3>
-              <p>Strategic insights for emerging business ventures.</p>
-            </div>
-
-            <div className="glass-card exp-card" style={{ gridColumn: 'span 4' }}>
-              <div className="exp-icon-wrap"><Mic size={28} /></div>
-              <h3>Storytelling & Public Speaking</h3>
-              <p>Crafting narratives that inspire and engage audiences.</p>
-            </div>
-
-            <div className="glass-card exp-card" style={{ gridColumn: 'span 4' }}>
-              <div className="exp-icon-wrap"><Shield size={28} /></div>
-              <h3>Cyber Awareness</h3>
-              <p>Promoting digital safety and corporate security protocols.</p>
-            </div>
-
-            <div className="glass-card exp-card" style={{ gridColumn: 'span 4' }}>
-              <div className="exp-icon-wrap"><Globe size={28} /></div>
-              <h3>Experiential Learning</h3>
-              <p>Immersive programs bridging theory and practical application.</p>
-            </div>
-          </div>
-        </div>
-      </section>
 
 
 
 
 
-      {/* Books Section Staggered */}
-      <section id="books" className="books-section-staggered">
-        <div className="container">
-          <div className="section-header text-center" style={{ marginBottom: '4rem' }}>
-            <h4 className="section-subtitle">BOOKS</h4>
-            <h2 style={{ fontSize: '3rem', color: 'var(--primary-dark)', lineHeight: '1.2' }}>Words That Shape Better Thinking</h2>
-          </div>
 
-          <div className="books-showcase">
-            {/* Book 1 */}
-            <div className="book-display-item item-left">
-              <div className="book-image-card">
-                <img src={book1Img} alt="The House of Mirrors" className="book-3d-model" />
-              </div>
-              <div className="book-info-card">
-                <h3>The House of Mirrors: Tales from Corporate Corridors</h3>
-                <p>Explore the intricate dynamics of corporate life and leadership through real-world tales.</p>
-                <button className="btn" style={{ background: '#0A4D9C', color: '#fff', borderRadius: '99px', padding: '0.6rem 1.5rem', border: 'none', cursor: 'pointer' }}>Read More Button</button>
-              </div>
-            </div>
 
-            {/* Book 2 */}
-            <div className="book-display-item item-right">
-              <div className="book-info-card">
-                <h3>Fearless or Shameless</h3>
-                <p>A deep dive into bold decisions, authentic leadership, and the fine line between confidence and hubris.</p>
-                <button className="btn" style={{ background: '#0A4D9C', color: '#fff', borderRadius: '99px', padding: '0.6rem 1.5rem', border: 'none', cursor: 'pointer' }}>Read More Button</button>
-              </div>
-              <div className="book-image-card">
-                <img src={book2Img} alt="Fearless or Shameless" className="book-3d-model" />
-              </div>
-            </div>
-
-            {/* Book 3 */}
-            <div className="book-display-item item-left">
-              <div className="book-image-card">
-                <img src={book3Img} alt="Making of a Sensible Consultant" className="book-3d-model" />
-              </div>
-              <div className="book-info-card">
-                <h3>Making of a Sensible Consultant</h3>
-                <p>The essential guide to consulting excellence, integrity, and building lasting client relationships.</p>
-                <button className="btn" style={{ background: '#0A4D9C', color: '#fff', borderRadius: '99px', padding: '0.6rem 1.5rem', border: 'none', cursor: 'pointer' }}>Read More Button</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Video Section */}
       <section className="video-section">
@@ -503,25 +531,7 @@ function App() {
       </section>
 
 
-      {/* CTA Section */}
-      <section className="cta-section" id="contact">
-        <div className="container">
-          <div className="cta-card">
-            <h2>Ready to Transform Your Organization?</h2>
-            <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '1.25rem', marginBottom: '3rem', maxWidth: '600px', margin: '0 auto 3rem' }}>
-              Partner with Rajit to unlock the full potential of your leadership and teams through tailored consulting and dynamic keynotes.
-            </p>
-            <div className="cta-btns">
-              <button className="btn" style={{ background: '#fff', color: '#0A4D9C' }}>
-                Book a Consultation
-              </button>
-              <button className="btn" style={{ background: 'transparent', border: '1px solid rgba(255,255,255,0.5)', color: '#fff' }}>
-                Invite for a Keynote
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
+
 
       {/* Footer */}
       <footer className="dark-footer">
@@ -529,7 +539,7 @@ function App() {
           <div className="footer-grid">
             <div className="footer-col branding-col">
               <div className="footer-logo">
-                <img src={logoImg} alt="Rajit Karunakaran Logo" style={{ height: '100px', objectFit: 'contain' }} />
+                <img src={logoImg} alt="Rajit Karunakaran Logo" style={{ height: '60px', objectFit: 'contain', marginBottom: '1rem' }} />
               </div>
               <p className="footer-desc">
                 Transforming organizations and inspiring leaders across the globe. Let's build the future of your business together.
@@ -546,9 +556,11 @@ function App() {
               <h4>Quick Links</h4>
               <ul>
                 <li><a href="#">Home</a></li>
-                <li><a href="#about">The Mentor</a></li>
-                <li><a href="#expertise">Game Changers</a></li>
-                <li><a href="#books">Blogs</a></li>
+                <li><RouterLink to="/about">About The Mentor</RouterLink></li>
+                <li><RouterLink to="/programs">Programs & Services</RouterLink></li>
+                <li><RouterLink to="/author">The Author</RouterLink></li>
+                <li><a href="#gallery">Recognition</a></li>
+                <li><RouterLink to="/insights">Ventures</RouterLink></li>
               </ul>
             </div>
             

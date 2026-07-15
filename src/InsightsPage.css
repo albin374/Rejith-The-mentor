@@ -1,0 +1,365 @@
+:root {
+  --color-primary-dark: #0f1d25;
+  --color-text-main: #111827;
+  --color-text-light: #4b5563;
+  --color-bg-light: #f9fafb;
+  --color-accent: #2563eb;
+}
+
+.insights-page {
+  font-family: 'Inter', sans-serif;
+  color: var(--color-text-main);
+  background-color: #ffffff;
+}
+
+.insights-main {
+  padding-bottom: 0;
+}
+
+/* Hero Section */
+.ins-hero {
+  background-color: #fafafa;
+  padding: 10rem 2rem 6rem;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.ins-hero-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+}
+
+@media (min-width: 1024px) {
+  .ins-hero-container {
+    grid-template-columns: 3fr 2fr;
+    align-items: center;
+  }
+}
+
+.ins-hero-content {
+  border-left: 3px solid #e5e5e5;
+  padding-left: 2rem;
+}
+
+.ins-overline {
+  color: #6b7280;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+.ins-hero-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--color-primary-dark);
+  margin-bottom: 1.5rem;
+}
+
+.ins-hero-desc {
+  font-size: 1.125rem;
+  color: var(--color-text-light);
+  line-height: 1.6;
+  max-width: 550px;
+}
+
+.ins-hero-graphic {
+  background-color: #f3f4f6;
+  aspect-ratio: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border: 1px solid #e5e7eb;
+}
+
+.ins-hero-graphic-icon {
+  color: #d1d5db;
+}
+
+.ins-hero-est {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  font-family: 'Playfair Display', serif;
+  font-size: 0.85rem;
+  color: #6b7280;
+  letter-spacing: 0.05em;
+}
+
+/* Venture I */
+.venture-section {
+  padding: 8rem 2rem;
+}
+
+.venture-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .venture-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.venture-image-wrapper {
+  position: relative;
+}
+
+.venture-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
+}
+
+.venture-content {
+  max-width: 550px;
+}
+
+.venture-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: var(--color-primary-dark);
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+  text-align: left !important;
+}
+
+.venture-desc {
+  color: var(--color-text-light);
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
+}
+
+.venture-features {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.venture-feature {
+  border: 1px solid #e5e7eb;
+  padding: 1.5rem;
+  display: flex;
+  gap: 1.5rem;
+  background: #fafafa;
+}
+
+.venture-feature-icon {
+  color: var(--color-primary-dark);
+  flex-shrink: 0;
+}
+
+.venture-feature-text h4 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+  color: var(--color-primary-dark);
+}
+
+.venture-feature-text p {
+  font-size: 0.85rem;
+  color: var(--color-text-light);
+  line-height: 1.5;
+}
+
+/* Venture II (Alternate) */
+.venture-section.alt {
+  background-color: #fafafa;
+}
+
+.venture-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.venture-stat {
+  background-color: #f3f4f6;
+  padding: 2rem;
+}
+
+.venture-stat-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #d1d5db;
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+
+.venture-stat-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-primary-dark);
+}
+
+.venture-btn {
+  padding: 1rem 2rem;
+  background-color: transparent;
+  border: 1px solid #d1d5db;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-primary-dark);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.venture-btn:hover {
+  background-color: var(--color-primary-dark);
+  color: white;
+  border-color: var(--color-primary-dark);
+}
+
+.venture-image-wrapper.offset {
+  position: relative;
+  z-index: 1;
+}
+
+/* Pillars Section */
+.pillars-section {
+  background-color: #e5e5e5;
+  padding: 8rem 2rem;
+  text-align: center;
+}
+
+.pillars-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 4rem;
+  color: var(--color-primary-dark);
+  display: inline-block;
+  position: relative;
+}
+
+.pillars-title::after {
+  content: '';
+  position: absolute;
+  bottom: -1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background-color: var(--color-primary-dark);
+}
+
+.pillars-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .pillars-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .pillars-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.pillar-card {
+  background: white;
+  padding: 3rem 2rem;
+  text-align: left;
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+}
+
+.pillar-icon {
+  margin-bottom: 2rem;
+  color: var(--color-primary-dark);
+}
+
+.pillar-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.pillar-desc {
+  font-size: 0.85rem;
+  color: var(--color-text-light);
+  line-height: 1.6;
+}
+
+/* CTA Section */
+.cta-section {
+  background-color: #1a252f;
+  padding: 8rem 2rem;
+  text-align: center;
+  color: white;
+}
+
+.cta-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.cta-desc {
+  font-size: 1.125rem;
+  color: #94a3b8;
+  max-width: 600px;
+  margin: 0 auto 3rem;
+  line-height: 1.6;
+}
+
+.cta-btns {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cta-btn {
+  padding: 1rem 2.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cta-btn.solid {
+  background-color: white;
+  color: #1a252f;
+  border: 1px solid white;
+}
+
+.cta-btn.solid:hover {
+  background-color: #f1f5f9;
+}
+
+.cta-btn.outline {
+  background-color: transparent;
+  color: white;
+  border: 1px solid rgba(255,255,255,0.3);
+}
+
+.cta-btn.outline:hover {
+  border-color: white;
+}
