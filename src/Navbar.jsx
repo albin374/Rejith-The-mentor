@@ -36,16 +36,16 @@ export default function Navbar({ transparent = false }) {
         
         {/* Desktop Links */}
         <div className="nav-links">
-          <RouterLink to="/" className={location.pathname === '/' ? 'active' : ''}>Home</RouterLink>
-          <RouterLink to="/about" className={location.pathname === '/about' ? 'active' : ''}>About The Mentor</RouterLink>
-          <RouterLink to="/programs" className={location.pathname === '/programs' ? 'active' : ''}>Programs & Services</RouterLink>
-          <RouterLink to="/author" className={location.pathname === '/author' ? 'active' : ''}>The Author</RouterLink>
-          <RouterLink to="/recognition" className={location.pathname === '/recognition' ? 'active' : ''}>Recognition</RouterLink>
-          <RouterLink to="/insights" className={location.pathname === '/insights' ? 'active' : ''}>Ventures</RouterLink>
+          <RouterLink to="/" className={location.pathname === '/' ? 'active' : ''} onClick={() => window.scrollTo(0,0)}>Home</RouterLink>
+          <RouterLink to="/about" className={location.pathname === '/about' ? 'active' : ''} onClick={() => window.scrollTo(0,0)}>About The Mentor</RouterLink>
+          <RouterLink to="/programs" className={location.pathname === '/programs' ? 'active' : ''} onClick={() => window.scrollTo(0,0)}>Programs & Services</RouterLink>
+          <RouterLink to="/author" className={location.pathname === '/author' ? 'active' : ''} onClick={() => window.scrollTo(0,0)}>The Author</RouterLink>
+          <RouterLink to="/recognition" className={location.pathname === '/recognition' ? 'active' : ''} onClick={() => window.scrollTo(0,0)}>Recognition</RouterLink>
+          <RouterLink to="/insights" className={location.pathname === '/insights' ? 'active' : ''} onClick={() => window.scrollTo(0,0)}>Ventures</RouterLink>
         </div>
 
         {/* Contact Button Desktop */}
-        <RouterLink to="/contact" className="btn btn-primary nav-contact-btn">
+        <RouterLink to="/contact" className="btn btn-primary nav-contact-btn" onClick={() => window.scrollTo(0,0)}>
           Contact
         </RouterLink>
 
@@ -59,13 +59,13 @@ export default function Navbar({ transparent = false }) {
       {isMobileMenuOpen && (
         <div className="mobile-menu-overlay">
           <div className="mobile-links">
-            <RouterLink to="/" onClick={() => setIsMobileMenuOpen(false)}>Home</RouterLink>
-            <RouterLink to="/about" onClick={() => setIsMobileMenuOpen(false)}>About The Mentor</RouterLink>
-            <RouterLink to="/programs" onClick={() => setIsMobileMenuOpen(false)}>Programs & Services</RouterLink>
-            <RouterLink to="/author" onClick={() => setIsMobileMenuOpen(false)}>The Author</RouterLink>
-            <RouterLink to="/recognition" onClick={() => setIsMobileMenuOpen(false)}>Recognition</RouterLink>
-            <RouterLink to="/insights" onClick={() => setIsMobileMenuOpen(false)}>Ventures</RouterLink>
-            <RouterLink to="/contact" className="btn btn-primary" onClick={() => setIsMobileMenuOpen(false)}>
+            <RouterLink to="/" onClick={() => { setIsMobileMenuOpen(false); window.scrollTo(0,0); }}>Home</RouterLink>
+            <RouterLink to="/about" onClick={() => { setIsMobileMenuOpen(false); window.scrollTo(0,0); }}>About The Mentor</RouterLink>
+            <RouterLink to="/programs" onClick={() => { setIsMobileMenuOpen(false); window.scrollTo(0,0); }}>Programs & Services</RouterLink>
+            <RouterLink to="/author" onClick={() => { setIsMobileMenuOpen(false); window.scrollTo(0,0); }}>The Author</RouterLink>
+            <RouterLink to="/recognition" onClick={() => { setIsMobileMenuOpen(false); window.scrollTo(0,0); }}>Recognition</RouterLink>
+            <RouterLink to="/insights" onClick={() => { setIsMobileMenuOpen(false); window.scrollTo(0,0); }}>Ventures</RouterLink>
+            <RouterLink to="/contact" className="btn btn-primary" onClick={() => { setIsMobileMenuOpen(false); window.scrollTo(0,0); }}>
               Contact
             </RouterLink>
           </div>

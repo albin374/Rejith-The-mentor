@@ -9,10 +9,12 @@ import AuthorPage from './AuthorPage.jsx'
 import RecognitionPage from './RecognitionPage.jsx'
 import InsightsPage from './InsightsPage.jsx'
 import ContactPage from './ContactPage.jsx'
+import ScrollToTop from './ScrollToTop.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/about" element={<AboutMentor />} />

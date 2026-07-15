@@ -127,7 +127,7 @@ function App() {
 
       <Navbar />
 
-      <section className="hero">
+      <section className="hero" style={{ '--mobile-hero-bg': `url("${bannerImg}")` }}>
         <div className="container hero-container hero-grid">
           <div className="hero-content">
             <h4 className="hero-credentials" style={{ fontWeight: 600, color: 'var(--primary-dark)', marginBottom: '0.5rem', textTransform: 'uppercase', letterSpacing: '1px' }}>
