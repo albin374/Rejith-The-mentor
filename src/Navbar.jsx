@@ -41,7 +41,7 @@ export default function Navbar({ transparent = false }) {
           <RouterLink to="/programs" className={location.pathname === '/programs' ? 'active' : ''} onClick={() => window.scrollTo(0,0)}>Programs & Services</RouterLink>
           <RouterLink to="/author" className={location.pathname === '/author' ? 'active' : ''} onClick={() => window.scrollTo(0,0)}>The Author</RouterLink>
           <RouterLink to="/recognition" className={location.pathname === '/recognition' ? 'active' : ''} onClick={() => window.scrollTo(0,0)}>Recognition</RouterLink>
-          <RouterLink to="/insights" className={location.pathname === '/insights' ? 'active' : ''} onClick={() => window.scrollTo(0,0)}>Ventures</RouterLink>
+          <RouterLink to="/ventures" className={location.pathname === '/ventures' ? 'active' : ''} onClick={() => window.scrollTo(0,0)}>Ventures</RouterLink>
         </div>
 
         {/* Contact Button Desktop */}
@@ -55,22 +55,24 @@ export default function Navbar({ transparent = false }) {
         </button>
       </nav>
 
-      {/* Mobile Menu Overlay */}
-      {isMobileMenuOpen && (
-        <div className="mobile-menu-overlay">
-          <div className="mobile-links">
-            <RouterLink to="/" onClick={() => { setIsMobileMenuOpen(false); window.scrollTo(0,0); }}>Home</RouterLink>
-            <RouterLink to="/about" onClick={() => { setIsMobileMenuOpen(false); window.scrollTo(0,0); }}>About The Mentor</RouterLink>
-            <RouterLink to="/programs" onClick={() => { setIsMobileMenuOpen(false); window.scrollTo(0,0); }}>Programs & Services</RouterLink>
-            <RouterLink to="/author" onClick={() => { setIsMobileMenuOpen(false); window.scrollTo(0,0); }}>The Author</RouterLink>
-            <RouterLink to="/recognition" onClick={() => { setIsMobileMenuOpen(false); window.scrollTo(0,0); }}>Recognition</RouterLink>
-            <RouterLink to="/insights" onClick={() => { setIsMobileMenuOpen(false); window.scrollTo(0,0); }}>Ventures</RouterLink>
-            <RouterLink to="/contact" className="btn btn-primary" onClick={() => { setIsMobileMenuOpen(false); window.scrollTo(0,0); }}>
-              Contact
-            </RouterLink>
-          </div>
+      {/* Mobile Menu Backdrop */}
+      <div className={`mobile-menu-backdrop ${isMobileMenuOpen ? 'open' : ''}`} onClick={() => setIsMobileMenuOpen(false)}></div>
+
+      {/* Mobile Menu Drawer */}
+      <div className={`mobile-menu-drawer ${isMobileMenuOpen ? 'open' : ''}`}>
+        <button className="mobile-close-btn" onClick={() => setIsMobileMenuOpen(false)}>
+          <X size={32} color="#ffffff" strokeWidth={1.5} />
+        </button>
+        <div className="mobile-drawer-links">
+          <RouterLink to="/" className={location.pathname === '/' ? 'active' : ''} onClick={() => { setIsMobileMenuOpen(false); window.scrollTo(0,0); }}>HOME</RouterLink>
+          <RouterLink to="/about" className={location.pathname === '/about' ? 'active' : ''} onClick={() => { setIsMobileMenuOpen(false); window.scrollTo(0,0); }}>ABOUT THE MENTOR</RouterLink>
+          <RouterLink to="/programs" className={location.pathname === '/programs' ? 'active' : ''} onClick={() => { setIsMobileMenuOpen(false); window.scrollTo(0,0); }}>PROGRAMS & SERVICES</RouterLink>
+          <RouterLink to="/author" className={location.pathname === '/author' ? 'active' : ''} onClick={() => { setIsMobileMenuOpen(false); window.scrollTo(0,0); }}>THE AUTHOR</RouterLink>
+          <RouterLink to="/recognition" className={location.pathname === '/recognition' ? 'active' : ''} onClick={() => { setIsMobileMenuOpen(false); window.scrollTo(0,0); }}>RECOGNITION</RouterLink>
+          <RouterLink to="/ventures" className={location.pathname === '/ventures' ? 'active' : ''} onClick={() => { setIsMobileMenuOpen(false); window.scrollTo(0,0); }}>VENTURES</RouterLink>
+          <RouterLink to="/contact" className={location.pathname === '/contact' ? 'active' : ''} onClick={() => { setIsMobileMenuOpen(false); window.scrollTo(0,0); }}>CONTACT</RouterLink>
         </div>
-      )}
+      </div>
     </>
   );
 }

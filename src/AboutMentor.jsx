@@ -1,6 +1,8 @@
+import footerLogoImg from './assets/media/logo_footer-removebg-preview.png';
+import { FaWhatsapp, FaFacebookF, FaInstagram, FaLinkedinIn, FaYoutube } from 'react-icons/fa';
 import React, { useState } from 'react';
 import Navbar from './Navbar';
-import { ArrowRight, Download, BookOpen, GraduationCap, Building2, Menu, X, Link as LinkIcon, Mail, Phone, Globe, Compass, Quote } from 'lucide-react';
+import {  ArrowRight, Download, BookOpen, GraduationCap, Building2, Menu, X, Link as LinkIcon, Mail, Phone, Globe, Compass, Quote  } from "lucide-react";
 import { Link } from 'react-router-dom';
 import './AboutMentor.css';
 import rajitPortrait from './assets/media/WhatsApp Image 2026-07-10 at 19.42.20.jpeg';
@@ -14,7 +16,7 @@ const AboutMentor = () => {
     <div className="about-page">
       <Navbar />
 
-      <section className="about-hero">
+      <section className="about-hero" style={{ '--mobile-about-bg': `url("${rajitPortrait}")` }}>
         <div className="container about-hero-grid">
           <div className="about-hero-content">
             <span className="pill-badge">ESTABLISHED 1991</span>
@@ -27,8 +29,8 @@ const AboutMentor = () => {
               A strategist with three decades of cross-industry expertise, Rajit Karunakaran bridges the gap between corporate excellence and transformative organizational design.
             </p>
             <div className="hero-btns">
-              <button className="btn btn-primary">Read Full Bio</button>
-              <button className="btn btn-outline">Download Executive CV</button>
+              <Link to="/about"><button className="btn btn-primary">Read Full Bio</button></Link>
+              <a href="#"><button className="btn btn-outline">Download Executive CV</button></a>
             </div>
           </div>
           <div className="about-hero-image">
@@ -149,7 +151,7 @@ const AboutMentor = () => {
               <p>
                 High-impact tracks focusing on workplace digital literacy, workplace etiquette, behavioral excellence, and semantic communication.
               </p>
-              <a href="#" className="link-arrow">Learn More <ArrowRight size={16} /></a>
+              <Link to="/programs" className="link-arrow">Learn More <ArrowRight size={16} /></Link>
             </div>
             <div className="future-card">
               <div className="icon-wrapper">
@@ -159,7 +161,7 @@ const AboutMentor = () => {
               <p>
                 As a Certified Adobe Creative Educator (Level 2), Rajit equips teachers and professors with the digital pedagogy and engagement strategies required to mentor Gen-Z and Gen-Alpha effectively.
               </p>
-              <a href="#" className="link-arrow">Program Details <ArrowRight size={16} /></a>
+              <Link to="/programs" className="link-arrow">Program Details <ArrowRight size={16} /></Link>
             </div>
           </div>
         </div>
@@ -198,16 +200,17 @@ const AboutMentor = () => {
           <div className="footer-grid">
             <div className="footer-col branding-col">
               <div className="footer-logo">
-                <img src={logoImg} alt="Rajit Karunakaran Logo" style={{ height: '60px', objectFit: 'contain', marginBottom: '1rem' }} />
+                <img src={footerLogoImg} alt="Rajit Karunakaran Logo" style={{ height: '50px', maxWidth: '100%', objectFit: 'contain', marginBottom: '1.5rem' }} />
               </div>
               <p className="footer-desc">
                 Transforming organizations and inspiring leaders across the globe. Let's build the future of your business together.
               </p>
-              <div className="social-links">
-                <a href="#"><LinkIcon size={20} /></a>
-                <a href="#"><Mail size={20} /></a>
-                <a href="#"><Phone size={20} /></a>
-                <a href="#"><Globe size={20} /></a>
+              <div className="social-links" style={{ display: 'flex', gap: '1rem', marginTop: '1.5rem', flexWrap: 'wrap' }}>
+                <a href="https://wa.me/918111897897" target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '40px', height: '40px', backgroundColor: 'white', borderRadius: '50%', boxShadow: '0 4px 6px rgba(0,0,0,0.1)', color: '#25D366' }}><FaWhatsapp size={22} /></a>
+                <a href="https://www.facebook.com/rajitkarunakaran/" target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '40px', height: '40px', backgroundColor: 'white', borderRadius: '50%', boxShadow: '0 4px 6px rgba(0,0,0,0.1)', color: '#1877F2' }}><FaFacebookF size={20} /></a>
+                <a href="https://www.instagram.com/rajitthementor/" target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '40px', height: '40px', backgroundColor: 'white', borderRadius: '50%', boxShadow: '0 4px 6px rgba(0,0,0,0.1)', color: '#E4405F' }}><FaInstagram size={22} /></a>
+                <a href="https://www.linkedin.com/in/rajitknair" target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '40px', height: '40px', backgroundColor: 'white', borderRadius: '50%', boxShadow: '0 4px 6px rgba(0,0,0,0.1)', color: '#0A66C2' }}><FaLinkedinIn size={20} /></a>
+                <a href="https://www.youtube.com/channel/UC9UflMwLMWXAqwBG7Xt6DGQ/videos" target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '40px', height: '40px', backgroundColor: 'white', borderRadius: '50%', boxShadow: '0 4px 6px rgba(0,0,0,0.1)', color: '#FF0000' }}><FaYoutube size={22} /></a>
               </div>
             </div>
             
@@ -219,16 +222,16 @@ const AboutMentor = () => {
                 <li><Link to="/programs">Programs & Services</Link></li>
                 <li><Link to="/author">The Author</Link></li>
                 <li><a href="/#gallery">Recognition</a></li>
-                <li><Link to="/insights">Ventures</Link></li>
+                <li><Link to="/ventures">Ventures</Link></li>
               </ul>
             </div>
             
             <div className="footer-col">
               <h4>Contact</h4>
               <ul>
-                <li>Info@probizcenter.com</li>
-                <li>+1 234 567 890</li>
-                <li>Global Operations</li>
+                <li>connect@rajitthementor.in</li>
+                <li>+91 81118 97897</li>
+                <li>WhatsApp: +91 81118 97897</li>
               </ul>
             </div>
           </div>

@@ -1,9 +1,9 @@
 :root {
-  --color-primary-dark: #0f1d25;
-  --color-text-main: #111827;
-  --color-text-light: #4b5563;
-  --color-bg-light: #f9fafb;
-  --color-accent: #2563eb;
+  --color-primary-dark: var(--primary-dark);
+  --color-text-main: var(--text-main);
+  --color-text-light: var(--text-muted);
+  --color-bg-light: var(--accent);
+  --color-accent: var(--primary);
 }
 
 .insights-page {
@@ -18,9 +18,9 @@
 
 /* Hero Section */
 .ins-hero {
-  background-color: #fafafa;
+  background-color: var(--accent);
   padding: 10rem 2rem 6rem;
-  border-bottom: 1px solid #eaeaea;
+  border-bottom: 1px solid var(--border-light);
 }
 
 .ins-hero-container {
@@ -54,11 +54,11 @@
 }
 
 .ins-hero-title {
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: 'Outfit', sans-serif;
   font-size: clamp(2.5rem, 5vw, 4rem);
-  font-weight: 700;
+  font-weight: 500;
   line-height: 1.1;
-  color: var(--color-primary-dark);
+  color: var(--primary-dark);
   margin-bottom: 1.5rem;
 }
 
@@ -70,14 +70,14 @@
 }
 
 .ins-hero-graphic {
-  background-color: #f3f4f6;
+  background-color: var(--white);
   aspect-ratio: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   position: relative;
-  border: 1px solid #e5e7eb;
+  border: 1px solid var(--border-light);
 }
 
 .ins-hero-graphic-icon {
@@ -88,7 +88,7 @@
   position: absolute;
   bottom: 2rem;
   right: 2rem;
-  font-family: 'Playfair Display', serif;
+  font-family: 'Outfit', sans-serif;
   font-size: 0.85rem;
   color: #6b7280;
   letter-spacing: 0.05em;
@@ -130,10 +130,10 @@
 }
 
 .venture-title {
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: 'Outfit', sans-serif;
   font-size: 2.25rem;
-  font-weight: 700;
-  color: var(--color-primary-dark);
+  font-weight: 500;
+  color: var(--primary-dark);
   margin-bottom: 1.5rem;
   line-height: 1.2;
   text-align: left !important;
@@ -152,11 +152,11 @@
 }
 
 .venture-feature {
-  border: 1px solid #e5e7eb;
+  border: 1px solid var(--border-light);
   padding: 1.5rem;
   display: flex;
   gap: 1.5rem;
-  background: #fafafa;
+  background: var(--accent);
 }
 
 .venture-feature-icon {
@@ -166,9 +166,9 @@
 
 .venture-feature-text h4 {
   font-size: 0.95rem;
-  font-weight: 700;
+  font-weight: 500;
   margin-bottom: 0.25rem;
-  color: var(--color-primary-dark);
+  color: var(--primary-dark);
 }
 
 .venture-feature-text p {
@@ -179,7 +179,7 @@
 
 /* Venture II (Alternate) */
 .venture-section.alt {
-  background-color: #fafafa;
+  background-color: var(--accent);
 }
 
 .venture-stats {
@@ -190,14 +190,15 @@
 }
 
 .venture-stat {
-  background-color: #f3f4f6;
+  background-color: var(--white);
   padding: 2rem;
+  border: 1px solid var(--border-light);
 }
 
 .venture-stat-num {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Outfit', sans-serif;
   font-size: 3.5rem;
-  font-weight: 700;
+  font-weight: 500;
   color: #d1d5db;
   line-height: 1;
   margin-bottom: 1rem;
@@ -241,7 +242,7 @@
 }
 
 .pillars-title {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Outfit', sans-serif;
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 4rem;
@@ -294,7 +295,7 @@
 }
 
 .pillar-title {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Outfit', sans-serif;
   font-size: 1.25rem;
   font-weight: 700;
   margin-bottom: 1rem;
@@ -308,25 +309,56 @@
 
 /* CTA Section */
 .cta-section {
-  background-color: #1a252f;
-  padding: 8rem 2rem;
+  background-color: var(--color-primary-dark, #0f172a);
+  padding: 10rem 2rem;
   text-align: center;
   color: white;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Subtle background accent */
+.cta-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at center, rgba(30, 58, 138, 0.2) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.cta-content {
+  position: relative;
+  z-index: 10;
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .cta-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 3rem;
-  font-weight: 700;
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 400;
   margin-bottom: 1.5rem;
+  color: #ffffff;
+  letter-spacing: -0.02em;
 }
 
 .cta-desc {
   font-size: 1.125rem;
-  color: #94a3b8;
+  color: rgba(255, 255, 255, 0.7);
   max-width: 600px;
-  margin: 0 auto 3rem;
-  line-height: 1.6;
+  margin: 0 auto 3.5rem;
+  line-height: 1.7;
+  font-weight: 300;
 }
 
 .cta-btns {
@@ -338,28 +370,34 @@
 
 .cta-btn {
   padding: 1rem 2.5rem;
-  font-size: 0.9rem;
-  font-weight: 600;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
 }
 
 .cta-btn.solid {
-  background-color: white;
-  color: #1a252f;
-  border: 1px solid white;
+  background-color: #ffffff;
+  color: var(--color-primary-dark, #0f172a);
+  border: 1px solid #ffffff;
 }
 
 .cta-btn.solid:hover {
-  background-color: #f1f5f9;
+  background-color: transparent;
+  color: #ffffff;
 }
 
 .cta-btn.outline {
   background-color: transparent;
-  color: white;
-  border: 1px solid rgba(255,255,255,0.3);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .cta-btn.outline:hover {
-  border-color: white;
+  border-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.05);
 }

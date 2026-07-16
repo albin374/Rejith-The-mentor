@@ -1,10 +1,15 @@
+import footerLogoImg from './assets/media/logo_footer-removebg-preview.png';
+import { FaWhatsapp, FaFacebookF, FaInstagram, FaLinkedinIn, FaYoutube } from 'react-icons/fa';
 import React, { useState } from 'react';
 import Navbar from './Navbar';
-import { Menu, X, Phone, Mail, Globe, MapPin } from 'lucide-react';
+import {  Menu, X, Phone, Mail, Globe, MapPin  } from "lucide-react";
 import { Link } from 'react-router-dom';
 import './ContactPage.css';
 import logoImg from './assets/media/logo.png_2K_202607141547.png';
+import Lanyard from './Lanyard';
+import contactCardImg from './contact_card.png';
 import bgImg from './assets/media/ChatGPT Image Jul 15, 2026, 03_05_58 PM.png';
+import newCardImg from './assets/media/WhatsApp Image 2026-07-10 at 19.42.27 (1).jpeg';
 
 const ContactPage = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -12,43 +17,7 @@ const ContactPage = () => {
   return (
     <div className="contact-page">
       {/* Navigation */}
-      <nav className="navbar" style={{ backgroundColor: 'transparent', position: 'absolute', width: '100%', top: 0, zIndex: 10 }}>
-        <div className="nav-logo">
-          <img src={logoImg} alt="Rajit Karunakaran Logo" style={{ height: '50px', objectFit: 'contain' }} />
-        </div>
-        
-        <div className="nav-links">
-          <Link to="/">Home</Link>
-          <Link to="/about">About The Mentor</Link>
-          <Link to="/programs">Programs & Services</Link>
-          <Link to="/author">The Author</Link>
-          <Link to="/recognition">Recognition</Link>
-          <Link to="/insights">Ventures</Link>
-        </div>
-
-        <Link to="/contact" className="btn btn-primary nav-contact-btn">
-          Contact
-        </Link>
-
-        <button 
-          className="mobile-menu-btn" 
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        >
-          {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
-        </button>
-      </nav>
-
-      <div className={`mobile-menu ${isMobileMenuOpen ? 'open' : ''}`}>
-        <div className="mobile-nav-links">
-          <Link to="/" onClick={() => setIsMobileMenuOpen(false)}>Home</Link>
-          <Link to="/about" onClick={() => setIsMobileMenuOpen(false)}>About The Mentor</Link>
-          <Link to="/programs" onClick={() => setIsMobileMenuOpen(false)}>Programs & Services</Link>
-          <Link to="/author" onClick={() => setIsMobileMenuOpen(false)}>The Author</Link>
-          <Link to="/recognition" onClick={() => setIsMobileMenuOpen(false)}>Recognition</Link>
-          <Link to="/insights" onClick={() => setIsMobileMenuOpen(false)}>Ventures</Link>
-          <Link to="/contact" className="active" onClick={() => setIsMobileMenuOpen(false)}>Contact</Link>
-        </div>
-      </div>
+      <Navbar transparent={true} />
 
       <main>
         {/* Hero Banner */}
@@ -63,8 +32,16 @@ const ContactPage = () => {
                 Whether your corporate board requires a strategic turnaround blueprint, your institution needs an electrifying keynote speaker, or your startup ecosystem seeks world-class mentorship—your path forward begins here.
               </p>
             </div>
-            <div className="contact-hero-graphic">
-              <img src={bgImg} alt="Corporate Boardroom" className="contact-hero-image" />
+            <div className="contact-hero-graphic" style={{ height: '600px', position: 'relative' }}>
+              <div style={{ position: 'relative', height: '100%', width: '100%', zIndex: 2 }}>
+                <Lanyard 
+                  position={[0, 0, 20]} 
+                  gravity={[0, -40, 0]} 
+                  frontImage={newCardImg} 
+                  backImage={newCardImg} 
+                  imageFit="cover" 
+                />
+              </div>
             </div>
           </div>
         </section>
@@ -93,7 +70,7 @@ const ContactPage = () => {
                 </div>
                 <div className="channel-text-wrapper">
                   <span className="channel-label">Email Inquiry</span>
-                  <span className="channel-value">Info@probizcenter.com</span>
+                  <span className="channel-value">connect@rajitthementor.in</span>
                 </div>
               </div>
 
@@ -176,12 +153,19 @@ const ContactPage = () => {
           <div className="footer-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '3rem', marginBottom: '3rem' }}>
             <div className="footer-col branding-col">
               <div className="footer-logo">
-                <img src={logoImg} alt="Rajit Karunakaran Logo" style={{ height: '60px', objectFit: 'contain', marginBottom: '1rem' }} />
+                <img src={footerLogoImg} alt="Rajit Karunakaran Logo" style={{ height: '50px', maxWidth: '100%', objectFit: 'contain', marginBottom: '1.5rem' }} />
               </div>
               <p className="footer-desc" style={{ color: '#cbd5e1', lineHeight: '1.6', marginBottom: '1.5rem' }}>
                 Refining corporate narratives through strategic advisory and published insights.
               </p>
-            </div>
+            <div className="social-links" style={{ display: 'flex', gap: '1rem', marginTop: '1.5rem', flexWrap: 'wrap' }}>
+                <a href="https://wa.me/918111897897" target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '40px', height: '40px', backgroundColor: 'white', borderRadius: '50%', boxShadow: '0 4px 6px rgba(0,0,0,0.1)', color: '#25D366' }}><FaWhatsapp size={22} /></a>
+                <a href="https://www.facebook.com/rajitkarunakaran/" target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '40px', height: '40px', backgroundColor: 'white', borderRadius: '50%', boxShadow: '0 4px 6px rgba(0,0,0,0.1)', color: '#1877F2' }}><FaFacebookF size={20} /></a>
+                <a href="https://www.instagram.com/rajitthementor/" target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '40px', height: '40px', backgroundColor: 'white', borderRadius: '50%', boxShadow: '0 4px 6px rgba(0,0,0,0.1)', color: '#E4405F' }}><FaInstagram size={22} /></a>
+                <a href="https://www.linkedin.com/in/rajitknair" target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '40px', height: '40px', backgroundColor: 'white', borderRadius: '50%', boxShadow: '0 4px 6px rgba(0,0,0,0.1)', color: '#0A66C2' }}><FaLinkedinIn size={20} /></a>
+                <a href="https://www.youtube.com/channel/UC9UflMwLMWXAqwBG7Xt6DGQ/videos" target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '40px', height: '40px', backgroundColor: 'white', borderRadius: '50%', boxShadow: '0 4px 6px rgba(0,0,0,0.1)', color: '#FF0000' }}><FaYoutube size={22} /></a>
+              </div>
+              </div>
             
             <div className="footer-col">
               <h4 style={{ fontSize: '1.1rem', marginBottom: '1.5rem', fontWeight: '600' }}>Quick Links</h4>
@@ -191,16 +175,16 @@ const ContactPage = () => {
                 <li><Link to="/programs" style={{ color: '#cbd5e1', textDecoration: 'none' }}>Programs & Services</Link></li>
                 <li><Link to="/author" style={{ color: '#cbd5e1', textDecoration: 'none' }}>The Author</Link></li>
                 <li><Link to="/recognition" style={{ color: '#cbd5e1', textDecoration: 'none' }}>Recognition</Link></li>
-                <li><Link to="/insights" style={{ color: '#cbd5e1', textDecoration: 'none' }}>Ventures</Link></li>
+                <li><Link to="/ventures" style={{ color: '#cbd5e1', textDecoration: 'none' }}>Ventures</Link></li>
               </ul>
             </div>
             
             <div className="footer-col">
               <h4 style={{ fontSize: '1.1rem', marginBottom: '1.5rem', fontWeight: '600' }}>Contact</h4>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.75rem', color: '#cbd5e1' }}>
-                <li>Info@probizcenter.com</li>
-                <li>+1 234 567 890</li>
-                <li>Global Operations</li>
+                <li>connect@rajitthementor.in</li>
+                <li>+91 81118 97897</li>
+                <li>WhatsApp: +91 81118 97897</li>
               </ul>
             </div>
           </div>

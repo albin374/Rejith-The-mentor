@@ -1,11 +1,14 @@
+import footerLogoImg from './assets/media/logo_footer-removebg-preview.png';
+import { FaWhatsapp, FaFacebookF, FaInstagram, FaLinkedinIn, FaYoutube } from 'react-icons/fa';
 import React, { useState } from 'react';
 import Navbar from './Navbar';
-import { Menu, X, Building2, Users, Target, BookOpen, Layers, RefreshCw, BarChart2, ShieldCheck, CheckCircle2 } from 'lucide-react';
+import {  Menu, X, Building2, Users, Target, BookOpen, Layers, RefreshCw, BarChart2, ShieldCheck, CheckCircle2  } from "lucide-react";
 import { Link } from 'react-router-dom';
 import './InsightsPage.css';
 import logoImg from './assets/media/logo.png_2K_202607141547.png';
 import venture1Img from './assets/media/WhatsApp Image 2026-07-10 at 19.42.38.jpeg'; 
 import venture2Img from './assets/media/WhatsApp Image 2026-07-10 at 19.42.33 (1).jpeg';
+import heroImg from './assets/media/WhatsApp Image 2026-07-10 at 19.42.32 (1).jpeg';
 
 const InsightsPage = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -27,9 +30,8 @@ const InsightsPage = () => {
                 The Rajit Karunakaran advisory ecosystem extends beyond consultancy into the structural development of ventures designed to sustain long-term human capital growth and operational resilience.
               </p>
             </div>
-            <div className="ins-hero-graphic">
-              <Building2 size={80} className="ins-hero-graphic-icon" strokeWidth={1} />
-              <span className="ins-hero-est">EST. 2014</span>
+            <div className="ins-hero-graphic" style={{ overflow: 'hidden' }}>
+              <img src={heroImg} alt="Ventures Banner" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
             </div>
           </div>
         </section>
@@ -89,7 +91,7 @@ const InsightsPage = () => {
                   <div className="venture-stat-label">Human Capital</div>
                 </div>
               </div>
-              <button className="venture-btn">Explore Advisory Framework</button>
+              <Link to="/programs"><button className="venture-btn">Explore Advisory Framework</button></Link>
             </div>
             <div className="venture-image-wrapper offset">
               <img src={venture2Img} alt="Probiz Knowledge Centre" className="venture-image" />
@@ -126,13 +128,15 @@ const InsightsPage = () => {
 
         {/* CTA Section */}
         <section className="cta-section">
-          <h2 className="cta-title">Architecting Future Legacies</h2>
-          <p className="cta-desc">
-            Connect with our foundational ventures to explore strategic partnerships or institutional transformations tailored to your organizational goals.
-          </p>
-          <div className="cta-btns">
-            <button className="cta-btn solid">Partner With Us</button>
-            <button className="cta-btn outline">View Case Studies</button>
+          <div className="cta-content">
+            <h2 className="cta-title">Architecting Future Legacies</h2>
+            <p className="cta-desc">
+              Connect with our foundational ventures to explore strategic partnerships or institutional transformations tailored to your organizational goals.
+            </p>
+            <div className="cta-btns">
+              <Link to="/contact"><button className="cta-btn solid">Partner With Us</button></Link>
+              <Link to="/ventures"><button className="cta-btn outline">View Case Studies</button></Link>
+            </div>
           </div>
         </section>
       </main>
@@ -143,12 +147,19 @@ const InsightsPage = () => {
           <div className="footer-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '3rem', marginBottom: '3rem' }}>
             <div className="footer-col branding-col">
               <div className="footer-logo">
-                <img src={logoImg} alt="Rajit Karunakaran Logo" style={{ height: '60px', objectFit: 'contain', marginBottom: '1rem' }} />
+                <img src={footerLogoImg} alt="Rajit Karunakaran Logo" style={{ height: '50px', maxWidth: '100%', objectFit: 'contain', marginBottom: '1.5rem' }} />
               </div>
               <p className="footer-desc" style={{ color: '#cbd5e1', lineHeight: '1.6', marginBottom: '1.5rem' }}>
                 Refining corporate narratives through strategic advisory and published insights.
               </p>
-            </div>
+            <div className="social-links" style={{ display: 'flex', gap: '1rem', marginTop: '1.5rem', flexWrap: 'wrap' }}>
+                <a href="https://wa.me/918111897897" target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '40px', height: '40px', backgroundColor: 'white', borderRadius: '50%', boxShadow: '0 4px 6px rgba(0,0,0,0.1)', color: '#25D366' }}><FaWhatsapp size={22} /></a>
+                <a href="https://www.facebook.com/rajitkarunakaran/" target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '40px', height: '40px', backgroundColor: 'white', borderRadius: '50%', boxShadow: '0 4px 6px rgba(0,0,0,0.1)', color: '#1877F2' }}><FaFacebookF size={20} /></a>
+                <a href="https://www.instagram.com/rajitthementor/" target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '40px', height: '40px', backgroundColor: 'white', borderRadius: '50%', boxShadow: '0 4px 6px rgba(0,0,0,0.1)', color: '#E4405F' }}><FaInstagram size={22} /></a>
+                <a href="https://www.linkedin.com/in/rajitknair" target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '40px', height: '40px', backgroundColor: 'white', borderRadius: '50%', boxShadow: '0 4px 6px rgba(0,0,0,0.1)', color: '#0A66C2' }}><FaLinkedinIn size={20} /></a>
+                <a href="https://www.youtube.com/channel/UC9UflMwLMWXAqwBG7Xt6DGQ/videos" target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '40px', height: '40px', backgroundColor: 'white', borderRadius: '50%', boxShadow: '0 4px 6px rgba(0,0,0,0.1)', color: '#FF0000' }}><FaYoutube size={22} /></a>
+              </div>
+              </div>
             
             <div className="footer-col">
               <h4 style={{ fontSize: '1.1rem', marginBottom: '1.5rem', fontWeight: '600' }}>Quick Links</h4>
@@ -164,9 +175,9 @@ const InsightsPage = () => {
             <div className="footer-col">
               <h4 style={{ fontSize: '1.1rem', marginBottom: '1.5rem', fontWeight: '600' }}>Contact</h4>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.75rem', color: '#cbd5e1' }}>
-                <li>Info@probizcenter.com</li>
-                <li>+1 234 567 890</li>
-                <li>Global Operations</li>
+                <li>connect@rajitthementor.in</li>
+                <li>+91 81118 97897</li>
+                <li>WhatsApp: +91 81118 97897</li>
               </ul>
             </div>
           </div>

@@ -1,9 +1,9 @@
 :root {
-  --color-primary: #2563eb;
-  --color-primary-dark: #1e40af;
-  --color-text-main: #111827;
-  --color-text-light: #4b5563;
-  --color-bg-light: #f9fafb;
+  --color-primary: var(--primary-dark);
+  --color-primary-dark: var(--primary-dark);
+  --color-text-main: var(--text-main);
+  --color-text-light: var(--text-muted);
+  --color-bg-light: var(--accent);
   --color-bg-dots: rgba(0, 0, 0, 0.03);
 }
 
@@ -49,9 +49,10 @@
   position: relative;
   width: 100%;
   aspect-ratio: 4/3;
-  border-radius: 1rem;
+  border-radius: 0px;
   overflow: hidden;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+  box-shadow: none;
+  border: 1px solid var(--border-light);
 }
 
 .rec-hero-image {
@@ -70,9 +71,9 @@
 }
 
 .rec-hero-title {
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: 'Outfit', sans-serif;
   font-size: 4rem;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 1.1;
   margin-bottom: 1.5rem;
   color: var(--color-text-main);
@@ -115,36 +116,37 @@
 }
 
 .rec-card {
-  background: white;
+  background: var(--color-primary-dark);
   padding: 2.5rem 2rem;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  box-shadow: none;
   display: flex;
   flex-direction: column;
   position: relative;
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: 1px solid rgba(0,0,0,0.03);
+  border: 1px solid rgba(255,255,255,0.1);
 }
 
 .rec-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
 }
 
 .rec-card-icon {
-  color: var(--color-primary);
+  color: var(--white, #fff);
   margin-bottom: 1.5rem;
 }
 
 .rec-card-title {
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: 'Outfit', sans-serif;
   font-size: 1.5rem;
-  font-weight: 700;
+  font-weight: 500;
   margin-bottom: 1rem;
+  color: var(--white, #fff);
 }
 
 .rec-card-desc {
-  color: var(--color-text-light);
+  color: rgba(255, 255, 255, 0.8);
   font-size: 0.875rem;
   line-height: 1.5;
   margin-bottom: 2rem;
@@ -152,17 +154,17 @@
 }
 
 .rec-card-desc strong {
-  color: var(--color-primary);
+  color: var(--white, #fff);
 }
 
 .rec-card-badge {
   display: inline-block;
-  background-color: #e0e7ff; /* light blue */
-  color: #4f46e5;
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  color: var(--white, #fff) !important;
   font-size: 0.65rem;
   font-weight: 700;
   padding: 0.25rem 0.75rem;
-  border-radius: 0.25rem;
+  border-radius: 4px;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   align-self: flex-start;
@@ -172,7 +174,7 @@
   position: absolute;
   top: -1rem;
   right: -1rem;
-  color: rgba(0, 0, 0, 0.03);
+  color: rgba(255, 255, 255, 0.05);
   z-index: 0;
   pointer-events: none;
 }
@@ -189,8 +191,9 @@
 
 /* Governance Section */
 .gov-section {
-  background-color: #f3f4f6; /* slightly darker grey */
+  background-color: var(--white);
   padding: 6rem 2rem;
+  border-top: 1px solid var(--border-light);
 }
 
 .gov-container {
@@ -216,7 +219,7 @@
   width: 100%;
   height: auto;
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-  border-radius: 0.25rem;
+  border-radius: 0px;
 }
 
 .gov-content {
@@ -234,9 +237,9 @@
 }
 
 .gov-title {
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: 'Outfit', sans-serif;
   font-size: clamp(1.2rem, 3.5vw, 2.25rem);
-  font-weight: 700;
+  font-weight: 500;
   margin-bottom: 2rem;
   line-height: 1.2;
   text-align: left !important;
@@ -247,8 +250,8 @@
   border-left: 3px solid var(--color-primary);
   padding-left: 1.5rem;
   margin-bottom: 2rem;
-  font-family: 'Inter', sans-serif;
-  font-style: italic;
+  font-family: 'Outfit', sans-serif;
+  font-style: normal;
   font-size: 1.125rem;
   color: var(--color-text-light);
   line-height: 1.6;

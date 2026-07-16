@@ -1,6 +1,8 @@
+import footerLogoImg from './assets/media/logo_footer-removebg-preview.png';
+import { FaWhatsapp, FaFacebookF, FaInstagram, FaLinkedinIn, FaYoutube } from 'react-icons/fa';
 import React, { useState, useEffect } from 'react';
 import Navbar from './Navbar';
-import { 
+import {  
   ArrowRight,
   BookOpen,
   Mic,
@@ -23,7 +25,7 @@ import {
   Brain,
   Gauge,
   BadgeCheck
-} from 'lucide-react';
+ } from "lucide-react";
 import { Routes, Route } from 'react-router-dom';
 import AboutMentor from './AboutMentor';
 import ProgramsAndServices from './ProgramsAndServices';
@@ -59,6 +61,19 @@ import hpLogo4 from './assets/media/homepage logo (4).png';
 import hpLogo5 from './assets/media/homepage logo (5).png';
 import introImg from './assets/media/WhatsApp Image 2026-07-10 at 19.42.28.jpeg';
 import { Link as RouterLink } from 'react-router-dom';
+import DomeGallery from './DomeGallery';
+
+// Extra images for Dome Gallery
+import domeImg1 from './assets/media/WhatsApp Image 2026-07-10 at 19.42.23 (1).jpeg';
+import domeImg2 from './assets/media/WhatsApp Image 2026-07-10 at 19.42.23.jpeg';
+import domeImg3 from './assets/media/WhatsApp Image 2026-07-10 at 19.42.24 (1).jpeg';
+import domeImg4 from './assets/media/WhatsApp Image 2026-07-10 at 19.42.24.jpeg';
+import domeImg5 from './assets/media/WhatsApp Image 2026-07-10 at 19.42.25 (1).jpeg';
+import domeImg6 from './assets/media/WhatsApp Image 2026-07-10 at 19.42.25.jpeg';
+import domeImg7 from './assets/media/WhatsApp Image 2026-07-10 at 19.42.26 (1).jpeg';
+import domeImg8 from './assets/media/WhatsApp Image 2026-07-10 at 19.42.26.jpeg';
+import domeImg9 from './assets/media/WhatsApp Image 2026-07-10 at 19.42.27 (1).jpeg';
+import domeImg10 from './assets/media/WhatsApp Image 2026-07-10 at 19.42.27.jpeg';
 
 function App() {
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
@@ -118,6 +133,12 @@ function App() {
     }, 4000);
     return () => clearInterval(timer);
   }, [testimonials.length]);
+
+  const galleryImages = [
+    img1, img2, img3, img4, img5, img6, img7,
+    imgSpeaking, imgCorporate, imgAwards, imgMentoring, imgLeadership, imgConsulting,
+    domeImg1, domeImg2, domeImg3, domeImg4, domeImg5, domeImg6, domeImg7, domeImg8, domeImg9, domeImg10
+  ];
   return (
     <>
       <div className="bg-blobs">
@@ -137,9 +158,12 @@ function App() {
               TEDx Speaker | International Strategist | Management Consultant | Leadership Coach | Corporate Trainer | Author
             </p>
             <h1 style={{ fontSize: '3.5rem', lineHeight: 1.1, marginBottom: '1.5rem' }}>
-              Shape the Minds <br /> That Shape Tomorrow.
+              Shape the <br className="mobile-br" />
+              Minds <br className="desktop-br" />
+              That <br className="mobile-br" />
+              Shape Tomorrow.
             </h1>
-            <p className="hero-tagline" style={{ fontSize: '1.2rem', fontStyle: 'italic', marginBottom: '2.5rem', color: 'var(--text-secondary)' }}>
+            <p className="hero-tagline" style={{ fontSize: '1.2rem', marginBottom: '2.5rem', color: 'var(--text-secondary)' }}>
               "Don't prepare people merely for today's jobs; prepare them to thrive in tomorrow's world."
             </p>
             <div className="hero-btns">
@@ -182,33 +206,7 @@ function App() {
       </section>
 
 
-      {/* About Section */}
-      <section id="about" className="about-section">
-        <div className="about-wave-bg"></div>
 
-        <div className="container about-grid">
-          <div className="about-left">
-            <h3 className="about-quote-new">
-              <span className="quote-mark">“</span> Transforming organizations by transforming people. <span className="quote-mark">”</span>
-            </h3>
-          </div>
-          <div className="about-right">
-            <div className="stacked-cards">
-              <div className="stacked-card card-4"></div>
-              <div className="stacked-card card-3"></div>
-              <div className="stacked-card card-2"></div>
-              <div className="stacked-card card-1 glass-card">
-                <p>Rajit Karunakaran is a TEDx Speaker, International Management Consultant, Mentor, Author, and Organizational Development Expert, with extensive experience in corporate consulting.</p>
-                <p>He focuses on building and transforming organizations by fostering innovative cultures and leading strategic change management initiatives worldwide.</p>
-                <p>Comparing these approaches with traditional management systems, he identifies the key developments required to transition professionals to adaptable, modern leaders.</p>
-                <p>Every professional community benefits from the actionable insights he brings, creating an environment for continuous learning and strategic execution.</p>
-                <p>State programs data and organizational metrics consistently improve under his guidance.</p>
-                <a href="#" className="read-more">Read more..</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Introduction Section (New) */}
       <section className="intro-section">
@@ -301,7 +299,7 @@ function App() {
                   <Brain size={56} />
                 </div>
                 <h2>Masterclass Series</h2>
-                <p>COGNITIVE TRANSFORMATION</p>
+                <p style={{ color: 'white' }}>COGNITIVE TRANSFORMATION</p>
               </div>
             </div>
             {/* Right Side */}
@@ -331,207 +329,46 @@ function App() {
                 </div>
               </div>
 
-              <a href="#" className="masterclass-btn">
+              <RouterLink to="/programs" className="masterclass-btn">
                 Explore the Masterclass <ArrowRight size={18} />
-              </a>
+              </RouterLink>
             </div>
           </div>
         </div>
       </section>
-      {/* Milestones & Achievements */}
-      <section id="milestones" className="dark-section">
+
+      {/* Video Spotlight Section */}
+      <section className="video-spotlight-section" style={{ padding: '5rem 0', backgroundColor: '#f8fafc' }}>
         <div className="container">
-          <h2 className="dark-heading" style={{ color: '#fff' }}>
-            A Legacy of Strategic Excellence
-          </h2>
-          <p className="dark-subtext">
-            Pioneering professional growth and organizational transformation through<br />
-            three decades of dedicated leadership and insight.
-          </p>
-
-          <div className="dark-bento-grid">
-            {/* Top Left: 32+ Years */}
-            <div className="dark-card" style={{ gridColumn: 'span 7', gridRow: 'span 2', backgroundImage: `linear-gradient(to right, rgba(11, 35, 69, 0.95) 0%, rgba(11, 35, 69, 0.4) 100%), url(${img5})`, backgroundPosition: 'center', backgroundSize: 'cover' }}>
-              <div className="card-content-bottom">
-                <div className="huge-number text-cyan glow-cyan">32+</div>
-                <div className="card-title">YEARS OF GLOBAL EXCELLENCE</div>
-                <p className="card-text" style={{ maxWidth: '400px' }}>Setting benchmarks in business consulting and leadership development across continents.</p>
-              </div>
-            </div>
-            
-            {/* Top Right: Founder */}
-            <div className="dark-card" style={{ gridColumn: 'span 5' }}>
-              <div className="card-top-row">
-                <Briefcase className="icon-cyan" size={28} />
-                <ArrowRight className="icon-gray" size={20} style={{ transform: 'rotate(-45deg)' }} />
-              </div>
-              <h3>Founder & CEO</h3>
-              <div className="pill-cyan-text">PROBIZ KNOWLEDGE CENTER</div>
-              <p className="card-text">Leading the vanguard of executive education and business strategy.</p>
-            </div>
-
-            {/* Middle Right: TEDx */}
-            <div className="dark-card" style={{ gridColumn: 'span 5' }}>
-              <div className="card-top-row">
-                <div className="pill-cyan-outline">GLOBAL PLATFORMS</div>
-              </div>
-              <Mic className="icon-dark-gray" size={64} />
-              <h3 style={{ marginTop: '1rem' }}>TEDx Speaker</h3>
-              <p className="card-text">Inspiring audiences with transformative ideas on leadership and innovation.</p>
-            </div>
-
-            {/* Bottom Left: Sessions */}
-            <div className="dark-card card-sessions" style={{ gridColumn: 'span 3' }}>
-              <div className="huge-number text-cyan">600+</div>
-              <div className="card-title-sm">Keynote Sessions</div>
-              <div className="line-divider"></div>
-              <div className="card-subtitle">DELIVERED GLOBALLY</div>
-            </div>
-
-            {/* Bottom Middle: Mentor */}
-            <div className="dark-card" style={{ gridColumn: 'span 6', flexDirection: 'row', alignItems: 'center', gap: '2rem' }}>
-              <div className="mentor-icon-box">
-                <Users className="icon-cyan" size={36} />
-                <div className="cyan-dot-square"></div>
-              </div>
-              <div>
-                <h3>Mentor of Change</h3>
-                <div className="pill-cyan-text">NITI AAYOG - GOVT. OF INDIA</div>
-                <p className="card-text">Driving innovation and entrepreneurship at the grassroots level.</p>
-              </div>
-            </div>
-
-            {/* Bottom Right: Author */}
-            <div className="dark-card" style={{ gridColumn: 'span 3' }}>
-              <div className="card-top-row">
-                <BookOpen className="icon-cyan" size={24} />
-                <div className="cyan-dot-small"></div>
-              </div>
-              <h3 style={{ marginTop: 'auto' }}>Published Author</h3>
-              <p className="card-text" style={{ fontSize: '0.8rem' }}>Authoring insights that shape modern business paradigms.</p>
+          <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
+            <span className="small-overline text-blue-500" style={{ fontWeight: 600, letterSpacing: '1px', textTransform: 'uppercase', fontSize: '0.875rem' }}>FEATURED KEYNOTE</span>
+            <h2 style={{ fontFamily: 'Outfit, sans-serif', fontSize: '2.5rem', color: 'var(--primary-dark)', marginTop: '0.5rem' }}>Commanding the Stage</h2>
+          </div>
+          <div className="video-card-wrapper" style={{ maxWidth: '900px', margin: '0 auto', backgroundColor: 'white', borderRadius: '24px', overflow: 'hidden', boxShadow: '0 20px 40px rgba(0,0,0,0.08)', border: '1px solid #e2e8f0', transition: 'transform 0.3s ease' }}>
+            <div style={{ position: 'relative', width: '100%', paddingTop: '56.25%', backgroundColor: '#000' }}>
+              <iframe 
+                src="https://www.youtube.com/embed/pVwu3B-0dX8?si=y9SHWpam8LtSfMU9" 
+                title="Rajit Karunakaran Speaking Reel" 
+                frameBorder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerPolicy="strict-origin-when-cross-origin" 
+                allowFullScreen
+                style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
+              ></iframe>
             </div>
           </div>
         </div>
       </section>
-
-
-
-
-
-
-
-
-
-      {/* Video Section */}
-      <section className="video-section">
-        <div className="container">
-          <div className="video-card">
-            <h2>Watch Rajit in Action</h2>
-            <div className="video-container">
-              {!isVideoPlaying ? (
-                <div onClick={() => setIsVideoPlaying(true)} style={{ display: 'block', width: '100%', height: '100%' }}>
-                  <img src={youtubeImg} alt="Watch Rajit in Action" />
-                  <div className="play-btn">
-                    <MonitorPlay size={32} />
-                  </div>
-                </div>
-              ) : (
-                <iframe 
-                  width="100%" 
-                  height="100%" 
-                  src="https://www.youtube.com/embed/pVwu3B-0dX8?autoplay=1" 
-                  title="YouTube video player" 
-                  frameBorder="0" 
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                  allowFullScreen
-                  style={{ position: 'absolute', top: 0, left: 0 }}
-                ></iframe>
-              )}
-            </div>
-          </div>
+      {/* Photo Gallery Section */}
+      <section className="gallery-section" style={{ padding: '4rem 0', backgroundColor: '#ffffff', position: 'relative' }}>
+        <div className="container" style={{ textAlign: 'center', marginBottom: '2rem' }}>
+          <h2 style={{ fontFamily: 'Outfit, sans-serif', fontSize: '2.5rem', color: 'var(--primary-dark)' }}>Legacy in Frames</h2>
+          <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem' }}>Glimpses of transformative engagements across the globe.</p>
+        </div>
+        <div style={{ width: '100%', height: '80vh', position: 'relative' }}>
+          <DomeGallery images={galleryImages} overlayBlurColor="#ffffff" grayscale={false} />
         </div>
       </section>
-
-      {/* Testimonials Section */}
-      <section id="testimonials" className="testimonials-section">
-        <div className="container">
-          <h2 className="section-title text-center" style={{ color: 'var(--primary-dark)', marginBottom: '4rem', fontSize: '3rem' }}>Testimonials</h2>
-          
-          <div className="testimonials-carousel">
-            {testimonials.map((t, index) => {
-              let positionClass = 'hidden-card';
-              if (index === currentTestimonial) positionClass = 'active-card';
-              else if (index === (currentTestimonial - 1 + testimonials.length) % testimonials.length) positionClass = 'prev-card';
-              else if (index === (currentTestimonial + 1) % testimonials.length) positionClass = 'next-card';
-
-              return (
-                <div key={t.id} className={`testimonial-card ${positionClass}`}>
-                  <Quote className="quote-icon quote-top" size={40} />
-                  <p className="testimonial-text">{t.text}</p>
-                  <div className="testimonial-author">
-                    <img src={rajitPortrait} alt="Author" className="author-img" />
-                    <div className="author-info">
-                      <h4>{t.name}</h4>
-                      <p>{t.role}</p>
-                    </div>
-                  </div>
-                  <Quote className="quote-icon quote-bottom" size={40} />
-                </div>
-              );
-            })}
-          </div>
-
-          <div className="testimonials-dots">
-            {testimonials.map((_, idx) => (
-              <div 
-                key={idx} 
-                className={`dot ${idx === currentTestimonial ? 'active-dot' : ''}`}
-                onClick={() => setCurrentTestimonial(idx)}
-              ></div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Photo Gallery */}
-      <section id="gallery" className="gallery-section">
-        <div className="container">
-          <h2 style={{ marginBottom: '4rem', color: 'var(--primary-dark)' }}>Photo Gallery</h2>
-          <div className="gallery-grid">
-            <div className="gallery-item gal-tall">
-              <img src={imgSpeaking} alt="Speaking" />
-              <div className="gallery-label">Speaking</div>
-            </div>
-            <div className="gallery-item">
-              <img src={img2} alt="Training" />
-              <div className="gallery-label">Training</div>
-            </div>
-            <div className="gallery-item">
-              <img src={imgCorporate} alt="Corporate Workshops" />
-              <div className="gallery-label">Corporate Workshops</div>
-            </div>
-            <div className="gallery-item">
-              <img src={imgMentoring} alt="Mentoring" />
-              <div className="gallery-label">Mentoring</div>
-            </div>
-            <div className="gallery-item gal-tall" style={{ gridRow: 'span 2' }}>
-              <img src={imgAwards} alt="Awards" />
-              <div className="gallery-label">Awards</div>
-            </div>
-            <div className="gallery-item">
-              <img src={imgLeadership} alt="Leadership" />
-              <div className="gallery-label">Leadership</div>
-            </div>
-            <div className="gallery-item">
-              <img src={imgConsulting} alt="Consulting" />
-              <div className="gallery-label">Consulting</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-
-
 
       {/* Footer */}
       <footer className="dark-footer">
@@ -539,37 +376,38 @@ function App() {
           <div className="footer-grid">
             <div className="footer-col branding-col">
               <div className="footer-logo">
-                <img src={logoImg} alt="Rajit Karunakaran Logo" style={{ height: '60px', objectFit: 'contain', marginBottom: '1rem' }} />
+                <img src={footerLogoImg} alt="Rajit Karunakaran Logo" style={{ height: '50px', maxWidth: '100%', objectFit: 'contain', marginBottom: '1.5rem' }} />
               </div>
               <p className="footer-desc">
                 Transforming organizations and inspiring leaders across the globe. Let's build the future of your business together.
               </p>
-              <div className="social-links">
-                <a href="#"><Link size={20} /></a>
-                <a href="#"><Mail size={20} /></a>
-                <a href="#"><Phone size={20} /></a>
-                <a href="#"><Globe size={20} /></a>
+              <div className="social-links" style={{ display: 'flex', gap: '1rem', marginTop: '1.5rem', flexWrap: 'wrap' }}>
+                <a href="https://wa.me/918111897897" target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '40px', height: '40px', backgroundColor: 'white', borderRadius: '50%', boxShadow: '0 4px 6px rgba(0,0,0,0.1)', color: '#25D366' }}><FaWhatsapp size={22} /></a>
+                <a href="https://www.facebook.com/rajitkarunakaran/" target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '40px', height: '40px', backgroundColor: 'white', borderRadius: '50%', boxShadow: '0 4px 6px rgba(0,0,0,0.1)', color: '#1877F2' }}><FaFacebookF size={20} /></a>
+                <a href="https://www.instagram.com/rajitthementor/" target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '40px', height: '40px', backgroundColor: 'white', borderRadius: '50%', boxShadow: '0 4px 6px rgba(0,0,0,0.1)', color: '#E4405F' }}><FaInstagram size={22} /></a>
+                <a href="https://www.linkedin.com/in/rajitknair" target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '40px', height: '40px', backgroundColor: 'white', borderRadius: '50%', boxShadow: '0 4px 6px rgba(0,0,0,0.1)', color: '#0A66C2' }}><FaLinkedinIn size={20} /></a>
+                <a href="https://www.youtube.com/channel/UC9UflMwLMWXAqwBG7Xt6DGQ/videos" target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '40px', height: '40px', backgroundColor: 'white', borderRadius: '50%', boxShadow: '0 4px 6px rgba(0,0,0,0.1)', color: '#FF0000' }}><FaYoutube size={22} /></a>
               </div>
             </div>
             
             <div className="footer-col">
               <h4>Quick Links</h4>
               <ul>
-                <li><a href="#">Home</a></li>
+                <li><RouterLink to="/">Home</RouterLink></li>
                 <li><RouterLink to="/about">About The Mentor</RouterLink></li>
                 <li><RouterLink to="/programs">Programs & Services</RouterLink></li>
                 <li><RouterLink to="/author">The Author</RouterLink></li>
                 <li><a href="#gallery">Recognition</a></li>
-                <li><RouterLink to="/insights">Ventures</RouterLink></li>
+                <li><RouterLink to="/ventures">Ventures</RouterLink></li>
               </ul>
             </div>
             
             <div className="footer-col">
               <h4>Contact</h4>
               <ul>
-                <li>Info@probizcenter.com</li>
-                <li>+1 234 567 890</li>
-                <li>Global Operations</li>
+                <li>connect@rajitthementor.in</li>
+                <li>+91 81118 97897</li>
+                <li>WhatsApp: +91 81118 97897</li>
               </ul>
             </div>
           </div>

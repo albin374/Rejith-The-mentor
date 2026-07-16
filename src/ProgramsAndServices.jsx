@@ -1,18 +1,22 @@
+import footerLogoImg from './assets/media/logo_footer-removebg-preview.png';
+import { FaWhatsapp, FaFacebookF, FaInstagram, FaLinkedinIn, FaYoutube } from 'react-icons/fa';
 import React, { useState } from 'react';
 import Navbar from './Navbar';
-import { Menu, X, Link as LinkIcon, Mail, Phone, Globe, Briefcase, TrendingUp, ShoppingBag, GraduationCap, Building2, Calendar, MonitorPlay, Landmark, PenTool, BriefcaseMedical, Network, PlayCircle } from 'lucide-react';
+import {  Menu, X, Link as LinkIcon, Mail, Phone, Globe, Briefcase, TrendingUp, ShoppingBag, GraduationCap, Building2, Calendar, MonitorPlay, Landmark, PenTool, BriefcaseMedical, Network, PlayCircle  } from "lucide-react";
 import { Link } from 'react-router-dom';
 import './ProgramsAndServices.css';
 import logoImg from './assets/media/logo.png_2K_202607141547.png';
 import headerImg from './assets/media/WhatsApp Image 2026-07-10 at 19.42.38.jpeg'; // header banner image
 import boardroomImg from './assets/media/WhatsApp Image 2026-07-10 at 19.42.27 (1).jpeg'; // updated image for Corporate Training
 import abstractImg from './assets/media/WhatsApp Image 2026-07-10 at 19.42.36 (1).jpeg'; // placeholder
+import SplashCursor from './SplashCursor';
 
 const ProgramsAndServices = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
     <div className="services-page">
+      <SplashCursor />
       <Navbar />
 
       <header className="services-header-new bg-gray-50">
@@ -52,7 +56,7 @@ const ProgramsAndServices = () => {
               </div>
             </div>
             
-            <button className="btn btn-outline-dark mt-6">Schedule a Corporate Consultation</button>
+            <Link to="/contact"><button className="btn btn-outline-dark mt-6">Schedule a Corporate Consultation</button></Link>
           </div>
           <div className="service-image">
             <img src={boardroomImg} alt="Corporate Training" />
@@ -64,7 +68,7 @@ const ProgramsAndServices = () => {
       <section className="service-section bg-white text-center">
         <div className="container">
           <h2 className="section-title-center">Management Consulting &<br />Strategic Advisory</h2>
-          <span className="service-tagline-center italic font-normal normal-case text-blue-600">Clarity in complexity. Velocity in execution.</span>
+          <span className="service-tagline-center font-normal normal-case text-blue-600">Clarity in complexity. Velocity in execution.</span>
 
           <div className="academy-split-grid mt-12">
             <div className="academy-card-left text-left">
@@ -80,7 +84,7 @@ const ProgramsAndServices = () => {
                 <li>Data-Driven Storytelling</li>
               </ul>
               
-              <button className="btn btn-dark-blue mt-8 w-full">Inquire About Strategic Advisory</button>
+              <Link to="/contact"><button className="btn btn-dark-blue mt-8 w-full">Inquire About Strategic Advisory</button></Link>
             </div>
             <div className="academy-image-right">
               <img src={abstractImg} alt="Strategic Advisory" />
@@ -147,12 +151,14 @@ const ProgramsAndServices = () => {
               Rajit Karunakaran serves as a catalyst for transformation, captivating audiences of executives and industry leaders by blending profound insight with actionable systemic strategy.
             </p>
             <div className="keynote-actions flex gap-4 mt-8">
-              <button className="btn btn-white-solid flex items-center gap-2">
+              <Link to="/contact"><button className="btn btn-white-solid flex items-center gap-2">
                 <Calendar size={18} /> Book Rajit for Your Next Event
-              </button>
-              <button className="btn btn-outline-white flex items-center gap-2">
-                <PlayCircle size={18} /> Watch Speaking Reel
-              </button>
+              </button></Link>
+              <a href="https://youtu.be/pVwu3B-0dX8?si=y9SHWpam8LtSfMU9" target="_blank" rel="noopener noreferrer">
+                <button className="btn btn-outline-white flex items-center gap-2">
+                  <PlayCircle size={18} /> Watch Speaking Reel
+                </button>
+              </a>
             </div>
           </div>
         </div>
@@ -164,16 +170,17 @@ const ProgramsAndServices = () => {
           <div className="footer-grid">
             <div className="footer-col branding-col">
               <div className="footer-logo">
-                <img src={logoImg} alt="Rajit Karunakaran Logo" style={{ height: '60px', objectFit: 'contain', marginBottom: '1rem' }} />
+                <img src={footerLogoImg} alt="Rajit Karunakaran Logo" style={{ height: '50px', maxWidth: '100%', objectFit: 'contain', marginBottom: '1.5rem' }} />
               </div>
               <p className="footer-desc">
                 Transforming organizations and inspiring leaders across the globe. Let's build the future of your business together.
               </p>
-              <div className="social-links">
-                <a href="#"><LinkIcon size={20} /></a>
-                <a href="#"><Mail size={20} /></a>
-                <a href="#"><Phone size={20} /></a>
-                <a href="#"><Globe size={20} /></a>
+              <div className="social-links" style={{ display: 'flex', gap: '1rem', marginTop: '1.5rem', flexWrap: 'wrap' }}>
+                <a href="https://wa.me/918111897897" target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '40px', height: '40px', backgroundColor: 'white', borderRadius: '50%', boxShadow: '0 4px 6px rgba(0,0,0,0.1)', color: '#25D366' }}><FaWhatsapp size={22} /></a>
+                <a href="https://www.facebook.com/rajitkarunakaran/" target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '40px', height: '40px', backgroundColor: 'white', borderRadius: '50%', boxShadow: '0 4px 6px rgba(0,0,0,0.1)', color: '#1877F2' }}><FaFacebookF size={20} /></a>
+                <a href="https://www.instagram.com/rajitthementor/" target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '40px', height: '40px', backgroundColor: 'white', borderRadius: '50%', boxShadow: '0 4px 6px rgba(0,0,0,0.1)', color: '#E4405F' }}><FaInstagram size={22} /></a>
+                <a href="https://www.linkedin.com/in/rajitknair" target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '40px', height: '40px', backgroundColor: 'white', borderRadius: '50%', boxShadow: '0 4px 6px rgba(0,0,0,0.1)', color: '#0A66C2' }}><FaLinkedinIn size={20} /></a>
+                <a href="https://www.youtube.com/channel/UC9UflMwLMWXAqwBG7Xt6DGQ/videos" target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '40px', height: '40px', backgroundColor: 'white', borderRadius: '50%', boxShadow: '0 4px 6px rgba(0,0,0,0.1)', color: '#FF0000' }}><FaYoutube size={22} /></a>
               </div>
             </div>
             
@@ -185,16 +192,16 @@ const ProgramsAndServices = () => {
                 <li><Link to="/programs">Programs & Services</Link></li>
                 <li><Link to="/author">The Author</Link></li>
                 <li><a href="/#gallery">Recognition</a></li>
-                <li><Link to="/insights">Ventures</Link></li>
+                <li><Link to="/ventures">Ventures</Link></li>
               </ul>
             </div>
             
             <div className="footer-col">
               <h4>Contact</h4>
               <ul>
-                <li>Info@probizcenter.com</li>
-                <li>+1 234 567 890</li>
-                <li>Global Operations</li>
+                <li>connect@rajitthementor.in</li>
+                <li>+91 81118 97897</li>
+                <li>WhatsApp: +91 81118 97897</li>
               </ul>
             </div>
           </div>

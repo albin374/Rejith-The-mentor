@@ -1,6 +1,8 @@
+import footerLogoImg from './assets/media/logo_footer-removebg-preview.png';
+import { FaWhatsapp, FaFacebookF, FaInstagram, FaLinkedinIn, FaYoutube } from 'react-icons/fa';
 import React, { useState } from 'react';
 import Navbar from './Navbar';
-import { Menu, X, Link as LinkIcon, Mail, Phone, Globe, BookOpen, Quote, Book, ShoppingCart, ArrowRight } from 'lucide-react';
+import {  Menu, X, Link as LinkIcon, Mail, Phone, Globe, BookOpen, Quote, Book, ShoppingCart, ArrowRight  } from "lucide-react";
 import { Link } from 'react-router-dom';
 import './AuthorPage.css';
 import logoImg from './assets/media/logo.png_2K_202607141547.png';
@@ -22,18 +24,22 @@ const AuthorPage = () => {
           <div className="hero-content">
             <h1 className="hero-title">
               Real-World Insights.<br />
-              <span className="hero-italic text-tertiary">Written for Practical Impact.</span>
+              <span className="hero-italic text-tertiary font-serif">Written for Practical Impact.</span>
             </h1>
             <p className="hero-desc">
               Distilling decades of global advisory expertise into definitive narratives for the modern leader.
             </p>
             <div className="hero-actions">
-              <button className="btn-solid-primary">
-                Order Your Copies Directly
-              </button>
-              <button className="btn-outline-primary">
-                Bulk Inquiries
-              </button>
+              <a href="https://wa.me/918111897897" target="_blank" rel="noopener noreferrer">
+                <button className="btn-solid-primary">
+                  Order Your Copies Directly
+                </button>
+              </a>
+              <Link to="/contact">
+                <button className="btn-outline-primary">
+                  Bulk Inquiries
+                </button>
+              </Link>
             </div>
           </div>
           
@@ -65,9 +71,6 @@ const AuthorPage = () => {
                   <div className="editorial-quote text-tertiary-dark">
                     "Highly recommended by academic circles for its rigorous yet pragmatic approach to professional services."
                   </div>
-                  <button className="text-btn hover-tertiary">
-                    EXPLORE SYNOPSIS <ArrowRight size={18} />
-                  </button>
                 </div>
                 <div className="editorial-image order-1 md-order-2">
                   <div className="tonal-card">
@@ -82,15 +85,6 @@ const AuthorPage = () => {
 
               {/* Book 2 (Reversed) */}
               <div className="editorial-grid book-item group">
-                <div className="editorial-image">
-                  <div className="tonal-card">
-                    <img 
-                      src={book2Img} 
-                      alt="Fearless or Shameless" 
-                      className="book-cover-img group-hover-scale"
-                    />
-                  </div>
-                </div>
                 <div className="editorial-text">
                   <span className="book-overline text-tertiary">CORPORATE SATIRE</span>
                   <h2 className="editorial-title group-hover-tertiary">Fearless or Shameless</h2>
@@ -107,9 +101,15 @@ const AuthorPage = () => {
                       <div className="trait-desc">Human-centric focus</div>
                     </div>
                   </div>
-                  <button className="text-btn hover-tertiary">
-                    READ EXCERPT <ArrowRight size={18} />
-                  </button>
+                </div>
+                <div className="editorial-image">
+                  <div className="tonal-card">
+                    <img 
+                      src={book2Img} 
+                      alt="Fearless or Shameless" 
+                      className="book-cover-img group-hover-scale"
+                    />
+                  </div>
                 </div>
               </div>
 
@@ -132,9 +132,6 @@ const AuthorPage = () => {
                       <span>Unfiltered industry insights</span>
                     </div>
                   </div>
-                  <button className="text-btn hover-tertiary">
-                    VIEW AVAILABILITY <ArrowRight size={18} />
-                  </button>
                 </div>
                 <div className="editorial-image order-1 md-order-2">
                   <div className="tonal-card">
@@ -151,25 +148,25 @@ const AuthorPage = () => {
           </div>
         </section>
 
-        {/* Newsletter / Bulk Inquiry Section */}
-        <section className="inquiry-section">
-          <div className="inquiry-container">
-            <div className="inquiry-icon">
-              <BookOpen size={64} className="text-tertiary opacity-40" />
+        {/* Modern Bulk Inquiry Section */}
+        <section className="inquiry-section-modern">
+          <div className="inquiry-container-modern">
+            <div className="inquiry-icon-modern">
+              <BookOpen size={48} />
             </div>
-            <h3 className="inquiry-title">Partner with Purpose</h3>
-            <p className="inquiry-desc">
+            <h3 className="inquiry-title-modern">Partner with Purpose</h3>
+            <p className="inquiry-desc-modern">
               For corporate gifting, academic institutional orders, or customized workshops based on these works, connect with our executive team.
             </p>
-            <form className="inquiry-form" onSubmit={(e) => e.preventDefault()}>
+            <form className="inquiry-form-modern" onSubmit={(e) => e.preventDefault()}>
               <input 
                 type="email" 
                 placeholder="YOUR EMAIL ADDRESS" 
-                className="inquiry-input"
+                className="inquiry-input-modern"
               />
-              <button className="btn-solid-primary inquiry-btn">
+              <Link to="/contact" className="btn-modern-submit" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 SEND INQUIRY
-              </button>
+              </Link>
             </form>
           </div>
         </section>
@@ -181,12 +178,19 @@ const AuthorPage = () => {
           <div className="footer-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '3rem', marginBottom: '3rem' }}>
             <div className="footer-col branding-col">
               <div className="footer-logo">
-                <img src={logoImg} alt="Rajit Karunakaran Logo" style={{ height: '60px', objectFit: 'contain', marginBottom: '1rem' }} />
+                <img src={footerLogoImg} alt="Rajit Karunakaran Logo" style={{ height: '50px', maxWidth: '100%', objectFit: 'contain', marginBottom: '1.5rem' }} />
               </div>
               <p className="footer-desc" style={{ color: '#cbd5e1', lineHeight: '1.6', marginBottom: '1.5rem' }}>
                 Refining corporate narratives through strategic advisory and published insights.
               </p>
-            </div>
+            <div className="social-links" style={{ display: 'flex', gap: '1rem', marginTop: '1.5rem', flexWrap: 'wrap' }}>
+                <a href="https://wa.me/918111897897" target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '40px', height: '40px', backgroundColor: 'white', borderRadius: '50%', boxShadow: '0 4px 6px rgba(0,0,0,0.1)', color: '#25D366' }}><FaWhatsapp size={22} /></a>
+                <a href="https://www.facebook.com/rajitkarunakaran/" target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '40px', height: '40px', backgroundColor: 'white', borderRadius: '50%', boxShadow: '0 4px 6px rgba(0,0,0,0.1)', color: '#1877F2' }}><FaFacebookF size={20} /></a>
+                <a href="https://www.instagram.com/rajitthementor/" target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '40px', height: '40px', backgroundColor: 'white', borderRadius: '50%', boxShadow: '0 4px 6px rgba(0,0,0,0.1)', color: '#E4405F' }}><FaInstagram size={22} /></a>
+                <a href="https://www.linkedin.com/in/rajitknair" target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '40px', height: '40px', backgroundColor: 'white', borderRadius: '50%', boxShadow: '0 4px 6px rgba(0,0,0,0.1)', color: '#0A66C2' }}><FaLinkedinIn size={20} /></a>
+                <a href="https://www.youtube.com/channel/UC9UflMwLMWXAqwBG7Xt6DGQ/videos" target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '40px', height: '40px', backgroundColor: 'white', borderRadius: '50%', boxShadow: '0 4px 6px rgba(0,0,0,0.1)', color: '#FF0000' }}><FaYoutube size={22} /></a>
+              </div>
+              </div>
             
             <div className="footer-col">
               <h4 style={{ fontSize: '1.1rem', marginBottom: '1.5rem', fontWeight: '600' }}>Quick Links</h4>
@@ -201,9 +205,9 @@ const AuthorPage = () => {
             <div className="footer-col">
               <h4 style={{ fontSize: '1.1rem', marginBottom: '1.5rem', fontWeight: '600' }}>Contact</h4>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.75rem', color: '#cbd5e1' }}>
-                <li>Info@probizcenter.com</li>
-                <li>+1 234 567 890</li>
-                <li>Global Operations</li>
+                <li>connect@rajitthementor.in</li>
+                <li>+91 81118 97897</li>
+                <li>WhatsApp: +91 81118 97897</li>
               </ul>
             </div>
           </div>
