@@ -568,12 +568,12 @@ section {
 @media (max-width: 768px) {
   .hero {
     background-image: var(--mobile-hero-bg);
-    background-size: 130%; /* Zoomed out from cover for better clarity */
-    background-position: top center;
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
-    padding-top: 5rem;
-    min-height: auto;
-    padding-bottom: 0;
+    padding-top: 6rem;
+    min-height: 100vh;
+    padding-bottom: 2rem;
   }
   
   .hero-container {
