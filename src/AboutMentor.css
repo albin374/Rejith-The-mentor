@@ -543,8 +543,10 @@
 @media (max-width: 768px) {
   .about-hero {
     padding: 8rem 2rem 4rem;
+    background-color: #1e293b;
     background-image: var(--mobile-about-bg);
     background-size: cover;
+    background-repeat: no-repeat;
     background-position: center 20%;
     position: relative;
   }
@@ -554,9 +556,16 @@
   }
   
   .about-hero-content h1 {
+    font-size: 2.25rem;
     font-weight: 800;
     color: #ffffff;
     text-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+  }
+
+  .hero-btns {
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
   }
 
   .about-hero-content .text-blue {
@@ -578,6 +587,11 @@
     font-weight: 800;
     text-shadow: 0 2px 5px rgba(0,0,0,0.5);
   }
+  
+  .hide-on-mobile {
+    display: none !important;
+  }
+
   .journey-section, .ecosystem-section, .shaping-future-section {
     padding: 4rem 1.5rem;
   }

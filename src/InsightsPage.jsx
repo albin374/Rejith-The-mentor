@@ -91,7 +91,7 @@ const InsightsPage = () => {
                   <div className="venture-stat-label">Human Capital</div>
                 </div>
               </div>
-              <Link to="/programs"><button className="venture-btn">Explore Advisory Framework</button></Link>
+              <Link to="/programs"><button className="btn btn-primary">Explore Advisory Framework</button></Link>
             </div>
             <div className="venture-image-wrapper offset">
               <img src={venture2Img} alt="Probiz Knowledge Centre" className="venture-image" />
@@ -134,8 +134,8 @@ const InsightsPage = () => {
               Connect with our foundational ventures to explore strategic partnerships or institutional transformations tailored to your organizational goals.
             </p>
             <div className="cta-btns">
-              <Link to="/contact"><button className="cta-btn solid">Partner With Us</button></Link>
-              <Link to="/ventures"><button className="cta-btn outline">View Case Studies</button></Link>
+              <Link to="/contact"><button className="btn btn-primary">Partner With Us</button></Link>
+              <Link to="/ventures"><button className="btn btn-secondary btn-outline">View Case Studies</button></Link>
             </div>
           </div>
         </section>

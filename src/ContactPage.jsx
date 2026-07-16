@@ -90,7 +90,7 @@ const ContactPage = () => {
                   Office Presence
                 </h3>
                 <p className="office-desc">
-                  Available for global engagements and local consultations in New York, London, and Dubai.
+                  Available for global engagements and local consultations in Kerala.
                 </p>
               </div>
             </div>
@@ -104,12 +104,12 @@ const ContactPage = () => {
                   <div className="form-grid two-cols">
                     <div className="form-group">
                       <label className="form-label">Full Name / Corporate Designee</label>
-                      <input type="text" className="form-input" placeholder="e.g., Jane Sterling" />
+                      <input type="text" className="form-input" placeholder="Enter your name" />
                     </div>
                     
                     <div className="form-group">
                       <label className="form-label">Organization / Institution Name</label>
-                      <input type="text" className="form-input" placeholder="e.g., Global Strategic Partners" />
+                      <input type="text" className="form-input" placeholder="Enter your organization name" />
                     </div>
                   </div>
 
@@ -133,7 +133,7 @@ const ContactPage = () => {
                     ></textarea>
                   </div>
 
-                  <button type="submit" className="form-submit-btn">
+                  <button type="submit" className="btn btn-primary w-full">
                     Submit Engagement Request
                   </button>
                   <p className="form-subtext">

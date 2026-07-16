@@ -31,12 +31,12 @@ const AuthorPage = () => {
             </p>
             <div className="hero-actions">
               <a href="https://wa.me/918111897897" target="_blank" rel="noopener noreferrer">
-                <button className="btn-solid-primary">
+                <button className="btn btn-primary">
                   Order Your Copies Directly
                 </button>
               </a>
               <Link to="/contact">
-                <button className="btn-outline-primary">
+                <button className="btn btn-secondary btn-outline">
                   Bulk Inquiries
                 </button>
               </Link>

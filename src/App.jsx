@@ -329,7 +329,7 @@ function App() {
                 </div>
               </div>
 
-              <RouterLink to="/programs" className="masterclass-btn">
+              <RouterLink to="/programs" className="btn btn-primary">
                 Explore the Masterclass <ArrowRight size={18} />
               </RouterLink>
             </div>

@@ -25,12 +25,12 @@ const AboutMentor = () => {
               Inspiring Innovation.<br />
               <span className="text-blue">Masterfully Told.</span>
             </h1>
-            <p>
+            <p className="hide-on-mobile">
               A strategist with three decades of cross-industry expertise, Rajit Karunakaran bridges the gap between corporate excellence and transformative organizational design.
             </p>
             <div className="hero-btns">
               <Link to="/about"><button className="btn btn-primary">Read Full Bio</button></Link>
-              <a href="#"><button className="btn btn-outline">Download Executive CV</button></a>
+              <a href="#"><button className="btn btn-secondary btn-outline">Download Executive CV</button></a>
             </div>
           </div>
           <div className="about-hero-image">

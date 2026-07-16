@@ -56,7 +56,7 @@ const ProgramsAndServices = () => {
               </div>
             </div>
             
-            <Link to="/contact"><button className="btn btn-outline-dark mt-6">Schedule a Corporate Consultation</button></Link>
+            <Link to="/contact"><button className="btn btn-secondary btn-outline mt-6">Schedule a Corporate Consultation</button></Link>
           </div>
           <div className="service-image">
             <img src={boardroomImg} alt="Corporate Training" />
@@ -84,7 +84,7 @@ const ProgramsAndServices = () => {
                 <li>Data-Driven Storytelling</li>
               </ul>
               
-              <Link to="/contact"><button className="btn btn-dark-blue mt-8 w-full">Inquire About Strategic Advisory</button></Link>
+              <Link to="/contact"><button className="btn btn-primary mt-8 w-full">Inquire About Strategic Advisory</button></Link>
             </div>
             <div className="academy-image-right">
               <img src={abstractImg} alt="Strategic Advisory" />
@@ -151,11 +151,11 @@ const ProgramsAndServices = () => {
               Rajit Karunakaran serves as a catalyst for transformation, captivating audiences of executives and industry leaders by blending profound insight with actionable systemic strategy.
             </p>
             <div className="keynote-actions flex gap-4 mt-8">
-              <Link to="/contact"><button className="btn btn-white-solid flex items-center gap-2">
+              <Link to="/contact"><button className="btn btn-primary flex items-center gap-2">
                 <Calendar size={18} /> Book Rajit for Your Next Event
               </button></Link>
               <a href="https://youtu.be/pVwu3B-0dX8?si=y9SHWpam8LtSfMU9" target="_blank" rel="noopener noreferrer">
-                <button className="btn btn-outline-white flex items-center gap-2">
+                <button className="btn btn-secondary btn-outline flex items-center gap-2">
                   <PlayCircle size={18} /> Watch Speaking Reel
                 </button>
               </a>

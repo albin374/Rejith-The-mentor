@@ -568,12 +568,12 @@ section {
 @media (max-width: 768px) {
   .hero {
     background-image: var(--mobile-hero-bg);
-    background-size: cover;
-    background-position: center top; /* Align to top to focus on the person, cropping the black stage at the bottom */
+    background-size: 130%; /* Zoomed out from cover for better clarity */
+    background-position: top center;
     background-repeat: no-repeat;
-    padding-top: 8rem;
+    padding-top: 5rem;
     min-height: auto;
-    padding-bottom: 4rem;
+    padding-bottom: 0;
   }
   
   .hero-container {
@@ -611,7 +611,8 @@ section {
   }
 
   .hero-content h1 {
-    font-size: 3rem;
+    font-size: 2.5rem !important;
+    font-weight: bold !important;
   }
 
   .hero-content h3 {

@@ -368,6 +368,28 @@
   flex-wrap: wrap;
 }
 
+.cta-btns .btn-outline {
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
+.cta-btns .btn-outline:hover {
+  background-color: #ffffff;
+  color: var(--color-primary-dark, #0f172a);
+}
+
+.cta-btns .btn-primary {
+  background-color: #ffffff;
+  color: var(--color-primary-dark, #0f172a);
+  border-color: #ffffff;
+}
+
+.cta-btns .btn-primary:hover {
+  background-color: transparent;
+  color: #ffffff;
+}
+
+
 .cta-btn {
   padding: 1rem 2.5rem;
   font-size: 0.85rem;
