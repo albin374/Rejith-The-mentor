@@ -55,6 +55,9 @@ import youtubeImg from './assets/media/youtube .png';
 import book1Img from './assets/media/The House of Mirrors Tales from Corporate Corridors.png';
 import book2Img from './assets/media/Fearless or Shameless.jpg';
 import book3Img from './assets/media/Making of a Sensible Consultant.png';
+import newCover1 from './assets/media/cover imge.png';
+import newCover2 from './assets/media/fearless.png';
+import newCover3 from './assets/media/the house of mirrors.png';
 import logoImg from './assets/media/logo.png_2K_202607141547.png';
 import hpLogo1 from './assets/media/homepage logo (1).png';
 import hpLogo2 from './assets/media/homepage logo (2).png';
@@ -340,7 +343,7 @@ function App() {
                     {card.icon}
                   </div>
                 )}
-                <div className="impact-number" style={{ color: isCenter ? 'white' : '#005a87' }}>
+                <div className="impact-number" style={{ color: isCenter ? 'white' : '#031273' }}>
                   {card.number}
                 </div>
                 <div className="impact-text" style={{ color: isCenter ? 'rgba(255,255,255,0.9)' : '#94a3b8' }}>
@@ -359,33 +362,21 @@ function App() {
         <div style={{ maxWidth: '1500px', margin: '0 auto', padding: '0 2rem' }}>
           
           <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
-            <span style={{ fontWeight: 600, letterSpacing: '2px', textTransform: 'uppercase', fontSize: '0.85rem', color: '#1d4ed8', display: 'block', marginBottom: '1rem' }}>THE AUTHOR</span>
-            <h2 style={{ fontSize: '3.5rem', color: '#0f172a', fontFamily: 'Georgia, serif', margin: 0, lineHeight: 1.1 }}>Rajit Karunakaran</h2>
+            <span style={{ fontWeight: 600, letterSpacing: '2px', textTransform: 'uppercase', fontSize: '0.85rem', color: '#0504AA', display: 'block', marginBottom: '1rem' }}>THE AUTHOR</span>
+            <h2 style={{ fontSize: '3.5rem', color: '#031273', fontFamily: 'Georgia, serif', margin: 0, lineHeight: 1.1 }}>Rajit Karunakaran</h2>
           </div>
 
           <div className="book-cards-grid">
-            <div className="book-cover-card navy">
-              <div className="book-cover-header">RAJIT KARUNAKARAN</div>
-              <div className="book-cover-content">
-                <div className="book-cover-title">Making of a Sensible<br/>Consultant!</div>
-                <div className="book-cover-vol">VOLUME 01</div>
-              </div>
+            <div className="book-cover-card">
+              <img src={newCover1} alt="Making of a Sensible Consultant" style={{ width: '100%', height: 'auto', display: 'block', borderRadius: '4px' }} />
             </div>
             
-            <div className="book-cover-card white">
-              <div className="book-cover-header">RAJIT KARUNAKARAN</div>
-              <div className="book-cover-content">
-                <div className="book-cover-title">Fearless or<br/>Shameless</div>
-                <div className="book-cover-vol">VOLUME 02</div>
-              </div>
+            <div className="book-cover-card">
+              <img src={newCover2} alt="Fearless or Shameless" style={{ width: '100%', height: 'auto', display: 'block', borderRadius: '4px' }} />
             </div>
 
-            <div className="book-cover-card blue">
-              <div className="book-cover-header">RAJIT KARUNAKARAN</div>
-              <div className="book-cover-content">
-                <div className="book-cover-title">The House of<br/>Mirrors: Tales<br/>from Corporate<br/>Corridors</div>
-                <div className="book-cover-vol">VOLUME 03</div>
-              </div>
+            <div className="book-cover-card">
+              <img src={newCover3} alt="The House of Mirrors" style={{ width: '100%', height: 'auto', display: 'block', borderRadius: '4px' }} />
             </div>
           </div>
 
@@ -443,13 +434,7 @@ function App() {
           <div className="masterclass-card">
             {/* Left Side */}
             <div className="masterclass-left">
-              <div className="masterclass-left-content">
-                <div className="masterclass-logo-icon">
-                  <Brain size={56} />
-                </div>
-                <h2>Masterclass Series</h2>
-                <p style={{ color: 'white' }}>COGNITIVE TRANSFORMATION</p>
-              </div>
+              {/* Image only, no text overlay */}
             </div>
             {/* Right Side */}
             <div className="masterclass-right">
@@ -622,12 +607,12 @@ function App() {
                   onClick={() => scrollInsights('left')}
                   className="insight-arrow-btn"
                   style={{ background: 'white', border: '1px solid #e2e8f0', borderRadius: '50%', width: '48px', height: '48px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', transition: 'all 0.2s ease', boxShadow: '0 4px 10px rgba(0,0,0,0.03)' }}
-                ><ChevronLeft size={24} color="#0f172a" /></button>
+                ><ChevronLeft size={24} color="#031273" /></button>
                 <button 
                   onClick={() => scrollInsights('right')}
                   className="insight-arrow-btn"
                   style={{ background: 'white', border: '1px solid #e2e8f0', borderRadius: '50%', width: '48px', height: '48px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', transition: 'all 0.2s ease', boxShadow: '0 4px 10px rgba(0,0,0,0.03)' }}
-                ><ChevronRight size={24} color="#0f172a" /></button>
+                ><ChevronRight size={24} color="#031273" /></button>
               </div>
             </div>
           </div>
