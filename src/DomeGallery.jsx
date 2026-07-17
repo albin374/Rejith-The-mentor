@@ -31,7 +31,7 @@ const DEFAULT_IMAGES = [
 ];
 
 const DEFAULTS = {
-  maxVerticalRotationDeg: 5,
+  maxVerticalRotationDeg: 85,
   dragSensitivity: 20,
   enlargeTransitionMs: 300,
   segments: 35
@@ -51,12 +51,27 @@ const getDataNumber = (el, name, fallback) => {
 
 function buildItems(pool, seg) {
   const xCols = Array.from({ length: seg }, (_, i) => -37 + i * 2);
-  const evenYs = [-4, -2, 0, 2, 4];
-  const oddYs = [-3, -1, 1, 3, 5];
+  const evenYs = [-16, -14, -12, -10, -8, -6, -4, -2, 0, 2, 4, 6, 8, 10, 12, 14, 16];
+  const oddYs = [-17, -15, -13, -11, -9, -7, -5, -3, -1, 1, 3, 5, 7, 9, 11, 13, 15, 17];
 
-  const coords = xCols.flatMap((x, c) => {
+  const coords = [];
+  xCols.forEach((x, c) => {
     const ys = c % 2 === 0 ? evenYs : oddYs;
-    return ys.map(y => ({ x, y, sizeX: 2, sizeY: 2 }));
+    ys.forEach(y => {
+      const absY = Math.abs(y);
+      let skip = false;
+      
+      // Accurately match spherical circumference (cosine curve) to prevent gaps
+      if (absY >= 16 && c % 6 !== 0) skip = true; // Extremely close to poles, keep 1/6
+      else if (absY >= 14 && absY < 16 && c % 4 !== 0) skip = true; // Keep 1/4
+      else if (absY >= 12 && absY < 14 && c % 2 !== 0) skip = true; // Keep 1/2
+      else if (absY >= 10 && absY < 12 && c % 3 === 0) skip = true; // Skip 1/3 (Keep 2/3)
+      else if (absY >= 8 && absY < 10 && c % 4 === 0) skip = true;  // Skip 1/4 (Keep 3/4)
+
+      if (!skip) {
+        coords.push({ x, y, sizeX: 2, sizeY: 2 });
+      }
+    });
   });
 
   const totalSlots = coords.length;
