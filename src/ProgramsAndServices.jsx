@@ -155,7 +155,7 @@ const ProgramsAndServices = () => {
                 <Calendar size={18} /> Book Rajit for Your Next Event
               </button></Link>
               <a href="https://youtu.be/pVwu3B-0dX8?si=y9SHWpam8LtSfMU9" target="_blank" rel="noopener noreferrer">
-                <button className="btn btn-secondary btn-outline flex items-center gap-2">
+                <button className="btn btn-secondary btn-outline flex items-center gap-2" style={{ color: 'white' }}>
                   <PlayCircle size={18} /> Watch Speaking Reel
                 </button>
               </a>
