@@ -1,6 +1,6 @@
 import footerLogoImg from './assets/media/logo_footer-removebg-preview.png';
 import { FaWhatsapp, FaFacebookF, FaInstagram, FaLinkedinIn, FaYoutube } from 'react-icons/fa';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Navbar from './Navbar';
 import {  
   ArrowRight,
@@ -23,6 +23,8 @@ import {
   X,
   Building2,
   Brain,
+  ChevronLeft,
+  ChevronRight,
   Gauge,
   BadgeCheck
  } from "lucide-react";
@@ -78,6 +80,70 @@ import domeImg10 from './assets/media/WhatsApp Image 2026-07-10 at 19.42.27.jpeg
 function App() {
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
+  const [activeFilter, setActiveFilter] = useState('ALL');
+  const insightsScrollRef = useRef(null);
+
+  const scrollInsights = (direction) => {
+    if (insightsScrollRef.current) {
+      const scrollAmount = 400;
+      insightsScrollRef.current.scrollBy({
+        left: direction === 'left' ? -scrollAmount : scrollAmount,
+        behavior: 'smooth'
+      });
+    }
+  };
+
+  const insightCards = [
+    {
+      category: 'FUTURE OF WORK',
+      title: "The Future of Work Isn't AI — It's Human Adaptability",
+      desc: "Organizations that thrive won't simply adopt artificial intelligence. They will cultivate resilient, adaptable professionals who can learn, unlearn, and lead through constant transformation.",
+      meta: "Jan 2026 · 7 min read"
+    },
+    {
+      category: 'LEADERSHIP',
+      title: "The Anatomy of Steve Jobs' Second Act — And What Boards Miss",
+      desc: "After 600+ keynotes exploring his life, the most misread chapter of Jobs is not the exile — it is the return.",
+      meta: "Nov 2025 · 6 min read"
+    },
+    {
+      category: 'CONSULTING',
+      title: "The Sensible Consultant's Diagnostic: Beyond the SWOT",
+      desc: "SWOT is a starting posture, not a diagnostic. A five-lens framework for advisory rigor from three decades of client engagements.",
+      meta: "Oct 2025 · 9 min read"
+    },
+    {
+      category: 'PEDAGOGY',
+      title: "STAR Faculty: Redesigning Instruction for Gen-Z and Gen-Alpha",
+      desc: "Digital pedagogy is not about slides that move. It is about attention architecture — the discipline of designing for the modern learner.",
+      meta: "Sep 2025 · 7 min read"
+    }
+  ];
+
+  const filteredCards = activeFilter === 'ALL' 
+    ? insightCards 
+    : insightCards.filter(card => card.category === activeFilter);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate-on-scroll');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.25 }
+    );
+    
+    const revealElements = document.querySelectorAll('.manifesto-reveal, .scroll-reveal');
+    revealElements.forEach(el => observer.observe(el));
+    
+    return () => {
+      revealElements.forEach(el => observer.unobserve(el));
+    };
+  }, []);
 
   const initialImpactData = [
     { id: 1, number: '33+', text: 'YEARS OF\nLEGACY', icon: null },
@@ -288,6 +354,89 @@ function App() {
         </div>
       </section>
 
+      {/* Books Section */}
+      <section className="books-section" style={{ padding: '8rem 0', backgroundColor: '#ffffff' }}>
+        <div style={{ maxWidth: '1500px', margin: '0 auto', padding: '0 2rem' }}>
+          
+          <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
+            <span style={{ fontWeight: 600, letterSpacing: '2px', textTransform: 'uppercase', fontSize: '0.85rem', color: '#1d4ed8', display: 'block', marginBottom: '1rem' }}>THE AUTHOR</span>
+            <h2 style={{ fontSize: '3.5rem', color: '#0f172a', fontFamily: 'Georgia, serif', margin: 0, lineHeight: 1.1 }}>Rajit Karunakaran</h2>
+          </div>
+
+          <div className="book-cards-grid">
+            <div className="book-cover-card navy">
+              <div className="book-cover-header">RAJIT KARUNAKARAN</div>
+              <div className="book-cover-content">
+                <div className="book-cover-title">Making of a Sensible<br/>Consultant!</div>
+                <div className="book-cover-vol">VOLUME 01</div>
+              </div>
+            </div>
+            
+            <div className="book-cover-card white">
+              <div className="book-cover-header">RAJIT KARUNAKARAN</div>
+              <div className="book-cover-content">
+                <div className="book-cover-title">Fearless or<br/>Shameless</div>
+                <div className="book-cover-vol">VOLUME 02</div>
+              </div>
+            </div>
+
+            <div className="book-cover-card blue">
+              <div className="book-cover-header">RAJIT KARUNAKARAN</div>
+              <div className="book-cover-content">
+                <div className="book-cover-title">The House of<br/>Mirrors: Tales<br/>from Corporate<br/>Corridors</div>
+                <div className="book-cover-vol">VOLUME 03</div>
+              </div>
+            </div>
+          </div>
+
+          <div className="books-grid">
+            {/* Book 1 */}
+            <div className="book-row scroll-reveal">
+              <div className="book-info">
+                <span className="book-number">01 / 03</span>
+                <h2 className="book-title">Making of a Sensible Consultant!</h2>
+                <p className="book-subtitle">The Definitive Blueprint for Aspiring Advisers.</p>
+              </div>
+              <div className="book-desc">
+                An insider's deep dive into consulting methodologies, client<br/>
+                diagnostics, and advisory ethics. Highly acclaimed and officially<br/>
+                recommended as reference literature by the APJ Abdul Kalam<br/>
+                Technological University and multiple prominent universities across<br/>
+                the GCC.
+              </div>
+            </div>
+
+            {/* Book 2 */}
+            <div className="book-row reverse scroll-reveal">
+              <div className="book-desc">
+                A sharp, witty, and deeply empathetic collection of essays<br/>
+                uncovering the hidden truths of modern workplaces,<br/>
+                leadership fallacies, and employee recognition dynamics.
+              </div>
+              <div className="book-info">
+                <span className="book-number">02 / 03</span>
+                <h2 className="book-title">Fearless or <br/> Shameless</h2>
+                <p className="book-subtitle">A Satirical Lens on Corporate Culture.</p>
+              </div>
+            </div>
+
+            {/* Book 3 */}
+            <div className="book-row scroll-reveal">
+              <div className="book-info">
+                <span className="book-number">03 / 03</span>
+                <h2 className="book-title">The House of <br/> Mirrors: Tales from <br/> Corporate Corridors</h2>
+                <p className="book-subtitle">Realities from the Advisory Frontlines.</p>
+              </div>
+              <div className="book-desc">
+                An unfiltered collection of narratives detailing performance,<br/>
+                leadership behavior, ethics, and triumphs observed through the lens<br/>
+                of international corporate advisory.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Masterclass Section */}
       <section className="masterclass-section">
         <div className="container">
@@ -337,12 +486,100 @@ function App() {
         </div>
       </section>
 
+      {/* Manifesto Section */}
+      <section 
+        className="manifesto-section"
+        style={{ padding: '6rem 0', backgroundColor: '#f8fafc' }}
+      >
+        <div className="container">
+          <div className="manifesto-header manifesto-reveal">
+            <span className="manifesto-subtitle">
+              <span className="line"></span>
+              THE MANIFESTO
+              <span className="line"></span>
+            </span>
+            <h2 className="manifesto-title">Four chapters. One trajectory.</h2>
+          </div>
+          <div className="manifesto-content-grid manifesto-reveal">
+            <div className="manifesto-left">
+              <div className="manifesto-number-container">
+                <span className="manifesto-big-number">01</span>
+                <span className="manifesto-chapter">CHAPTER 01</span>
+                <span className="manifesto-journey">The Journey</span>
+              </div>
+            </div>
+            <div className="manifesto-right">
+              <p>
+                Rajit Karunakaran is an international strategist, corporate trainer, and author with a 33-year legacy of steering organizational excellence across India and the GCC. His cross-functional advisory work addresses the core pillars of business transformation: corporate strategy, organizational design, human capital optimization, and cultural change management.
+              </p>
+              <p>
+                Known for his highly immersive, case-study-driven framework, Rajit strips away dry theory. He replaces it with lateral thinking methodologies and forum mechanics that deliver immediate, real-world utility. As a speaker, his legendary keynote exploring the leadership, disruptive philosophy, and life of Apple co-founder Steve Jobs has sold out in over 600 corporate and academic spaces across Kerala and the GCC.
+              </p>
+            </div>
+          </div>
+
+          <div className="manifesto-content-grid chapter-2 manifesto-reveal" style={{ marginTop: '8rem' }}>
+            <div className="manifesto-right">
+              <p>
+                Appointed by the Atal Innovation Mission (AIM), NITI Aayog (Government of India) as a Mentor of Change in 2018, Rajit's mandate expanded to Regional Mentor of Change for Kerala in 2019. In this capacity, he actively shapes India's grassroots innovation ecosystem — guiding thousands of young minds through ideation, rapid prototyping, design thinking, and lean entrepreneurship. This sustained dedication earned him five consecutive placements on the national GEMS Mentors List.
+              </p>
+              <p>
+                Believing deeply in inclusive economic growth, he serves as a volunteer mentor on the G20 Women Mentorship Platform (WEP), empowering women tech-founders and entrepreneurs to scale their ventures sustainably.
+              </p>
+            </div>
+            <div className="manifesto-left">
+              <div className="manifesto-number-container">
+                <span className="manifesto-big-number">02</span>
+                <span className="manifesto-chapter">CHAPTER 02</span>
+                <span className="manifesto-journey chapter-2-title">National Mentorship &<br/>Ecosystem Building</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="manifesto-content-grid chapter-3 manifesto-reveal" style={{ marginTop: '8rem' }}>
+            <div className="manifesto-left">
+              <div className="manifesto-number-container">
+                <span className="manifesto-big-number">03</span>
+                <span className="manifesto-chapter">CHAPTER 03</span>
+                <span className="manifesto-journey chapter-3-title">Shaping the Future of<br/>Pedagogy & Workforce<br/>Readiness</span>
+              </div>
+            </div>
+            <div className="manifesto-right">
+              <p>
+                To solve the modern industry-academia disconnect, Rajit champions two core initiatives:
+              </p>
+              <p>
+                1. For Professionals & Graduates: High-impact tracks focusing on workplace digital literacy, workplace etiquette, behavioral excellence, and semantic communication.
+              </p>
+              <p>
+                2. For Educators: The proprietary STAR Faculty Development Program. As a Certified Adobe Creative Educator (Level 2), Rajit equips teachers and professors with the digital pedagogy and engagement strategies required to mentor Gen-Z and Gen-Alpha effectively.
+              </p>
+            </div>
+          </div>
+
+          <div className="manifesto-content-grid chapter-4 manifesto-reveal" style={{ marginTop: '8rem' }}>
+            <div className="manifesto-right">
+              <p>
+                Rajit serves as the Director of Institutional Development & Strategic Management at the Rajadhani Group of Educational Institutions. Here, he spearheads institutional scaling, international industry collaborations, innovative academic blueprints, and macro branding strategies.
+              </p>
+            </div>
+            <div className="manifesto-left">
+              <div className="manifesto-number-container">
+                <span className="manifesto-big-number">04</span>
+                <span className="manifesto-chapter">CHAPTER 04</span>
+                <span className="manifesto-journey chapter-4-title">Current Executive<br/>Mandate</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Video Spotlight Section */}
       <section className="video-spotlight-section" style={{ padding: '5rem 0', backgroundColor: '#f8fafc' }}>
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
             <span className="small-overline text-blue-500" style={{ fontWeight: 600, letterSpacing: '1px', textTransform: 'uppercase', fontSize: '0.875rem' }}>FEATURED KEYNOTE</span>
-            <h2 style={{ fontFamily: 'Outfit, sans-serif', fontSize: '2.5rem', color: 'var(--primary-dark)', marginTop: '0.5rem' }}>Commanding the Stage</h2>
+            <h2 style={{ fontSize: '2.5rem', color: 'var(--primary-dark)', marginTop: '0.5rem' }}>Commanding the Stage</h2>
           </div>
           <div className="video-card-wrapper" style={{ maxWidth: '900px', margin: '0 auto', backgroundColor: 'white', borderRadius: '24px', overflow: 'hidden', boxShadow: '0 20px 40px rgba(0,0,0,0.08)', border: '1px solid #e2e8f0', transition: 'transform 0.3s ease' }}>
             <div style={{ position: 'relative', width: '100%', paddingTop: '56.25%', backgroundColor: '#000' }}>
@@ -359,10 +596,65 @@ function App() {
           </div>
         </div>
       </section>
+
+      {/* Insights Section */}
+      <section className="insights-section" style={{ padding: '6rem 0', backgroundColor: '#f8fafc' }}>
+        <div className="container">
+          <div className="insights-header">
+            <div className="insights-title-area">
+              <span className="insights-overline">ALL INSIGHTS</span>
+              <h2 className="insights-title">Latest writing</h2>
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '1.5rem' }}>
+              <div className="insights-filters">
+                {['ALL', 'FUTURE OF WORK', 'LEADERSHIP', 'CONSULTING', 'PEDAGOGY'].map(filter => (
+                  <button 
+                    key={filter}
+                    className={`insight-filter-btn ${activeFilter === filter ? 'active' : ''}`}
+                    onClick={() => setActiveFilter(filter)}
+                  >
+                    {filter}
+                  </button>
+                ))}
+              </div>
+              <div className="insights-nav-arrows" style={{ display: 'flex', gap: '0.75rem' }}>
+                <button 
+                  onClick={() => scrollInsights('left')}
+                  className="insight-arrow-btn"
+                  style={{ background: 'white', border: '1px solid #e2e8f0', borderRadius: '50%', width: '48px', height: '48px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', transition: 'all 0.2s ease', boxShadow: '0 4px 10px rgba(0,0,0,0.03)' }}
+                ><ChevronLeft size={24} color="#0f172a" /></button>
+                <button 
+                  onClick={() => scrollInsights('right')}
+                  className="insight-arrow-btn"
+                  style={{ background: 'white', border: '1px solid #e2e8f0', borderRadius: '50%', width: '48px', height: '48px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', transition: 'all 0.2s ease', boxShadow: '0 4px 10px rgba(0,0,0,0.03)' }}
+                ><ChevronRight size={24} color="#0f172a" /></button>
+              </div>
+            </div>
+          </div>
+          
+          <div className="insights-grid" ref={insightsScrollRef}>
+            {filteredCards.length > 0 ? filteredCards.map((card, idx) => (
+              <div className="insight-card" key={idx}>
+                <span className="insight-card-category">{card.category}</span>
+                <h3 className="insight-card-title">{card.title}</h3>
+                <p className="insight-card-desc">{card.desc}</p>
+                <div className="insight-card-footer">
+                  <span className="insight-card-meta">{card.meta}</span>
+                  <ArrowRight size={16} />
+                </div>
+              </div>
+            )) : (
+              <div style={{ padding: '3rem', gridColumn: '1 / -1', textAlign: 'center', color: '#64748b' }}>
+                <p>New insights coming soon in this category.</p>
+              </div>
+            )}
+          </div>
+        </div>
+      </section>
       {/* Photo Gallery Section */}
       <section className="gallery-section" style={{ padding: '4rem 0', backgroundColor: '#ffffff', position: 'relative' }}>
         <div className="container" style={{ textAlign: 'center', marginBottom: '2rem' }}>
-          <h2 style={{ fontFamily: 'Outfit, sans-serif', fontSize: '2.5rem', color: 'var(--primary-dark)' }}>Legacy in Frames</h2>
+          <h2 style={{ fontSize: '2.5rem', color: 'var(--primary-dark)' }}>Legacy in Frames</h2>
           <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem' }}>Glimpses of transformative engagements across the globe.</p>
         </div>
         <div style={{ width: '100%', height: '80vh', position: 'relative' }}>
