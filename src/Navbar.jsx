@@ -37,7 +37,7 @@ export default function Navbar({ transparent = false }) {
       >
         <div className="nav-logo">
           <RouterLink to="/">
-            <img src={(isMobile && location.pathname === '/' && !isScrolled) ? footerLogoImg : logoImg} alt="Rajit Karunakaran Logo" style={{ height: '50px', objectFit: 'contain' }} />
+            <img src={(isMobile && location.pathname === '/' && !isScrolled && !isMobileMenuOpen) ? footerLogoImg : logoImg} alt="Rajit Karunakaran Logo" style={{ height: isMobile ? '35px' : '50px', objectFit: 'contain' }} />
           </RouterLink>
         </div>
         
