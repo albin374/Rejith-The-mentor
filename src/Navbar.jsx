@@ -60,9 +60,7 @@ export default function Navbar({ transparent = false }) {
 
       {/* Mobile Menu Drawer */}
       <div className={`mobile-menu-drawer ${isMobileMenuOpen ? 'open' : ''}`}>
-        <button className="mobile-close-btn" onClick={() => setIsMobileMenuOpen(false)}>
-          <X size={32} color="#ffffff" strokeWidth={1.5} />
-        </button>
+
         <div className="mobile-drawer-links">
           <RouterLink to="/" className={location.pathname === '/' ? 'active' : ''} onClick={() => { setIsMobileMenuOpen(false); window.scrollTo(0,0); }}>HOME</RouterLink>
           <RouterLink to="/about" className={location.pathname === '/about' ? 'active' : ''} onClick={() => { setIsMobileMenuOpen(false); window.scrollTo(0,0); }}>ABOUT THE MENTOR</RouterLink>
