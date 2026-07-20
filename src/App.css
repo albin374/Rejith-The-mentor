@@ -2067,7 +2067,7 @@ section {
   align-items: center;
   gap: 6rem;
   width: max-content;
-  animation: scroll-carousel 20s linear infinite;
+  animation: scroll-carousel 40s linear infinite;
 }
 
 .carousel-logo {

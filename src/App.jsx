@@ -35,7 +35,7 @@ import AuthorPage from './AuthorPage';
 import RecognitionPage from './RecognitionPage';
 import './App.css';
 import rajitPortrait from './assets/rajit_portrait.png';
-import bannerImg from './assets/media/WhatsApp Image 2026-07-10 at 19.42.10.jpeg';
+import bannerImg from './assets/media/banner imge .png';
 import tedxVideo from './assets/tedx_video.png';
 import bookCover from './assets/book_cover.png';
 import img1 from './assets/media/WhatsApp Image 2026-07-10 at 19.41.42.jpeg';
@@ -63,7 +63,6 @@ import hpLogo1 from './assets/media/homepage logo (1).png';
 import hpLogo2 from './assets/media/homepage logo (2).png';
 import hpLogo3 from './assets/media/homepage logo (3).png';
 import hpLogo4 from './assets/media/homepage logo (4).png';
-import hpLogo5 from './assets/media/homepage logo (5).png';
 import introImg from './assets/media/WhatsApp Image 2026-07-10 at 19.42.28.jpeg';
 import { Link as RouterLink } from 'react-router-dom';
 import DomeGallery from './DomeGallery';
@@ -259,17 +258,26 @@ function App() {
       <section className="logo-carousel-section">
         <div className="carousel-track-container">
           <div className="carousel-track">
+            {/* Set 1 */}
             <img src={hpLogo1} alt="Cyber Ambassador" className="carousel-logo" />
             <img src={hpLogo2} alt="Regional Mentor" className="carousel-logo" />
             <img src={hpLogo3} alt="Global Mentor" className="carousel-logo" />
             <img src={hpLogo4} alt="Startup Advisor" className="carousel-logo" />
-            <img src={hpLogo5} alt="Director" className="carousel-logo" />
-            {/* Duplicated for infinite loop effect */}
+            {/* Set 2 */}
             <img src={hpLogo1} alt="Cyber Ambassador" className="carousel-logo" />
             <img src={hpLogo2} alt="Regional Mentor" className="carousel-logo" />
             <img src={hpLogo3} alt="Global Mentor" className="carousel-logo" />
             <img src={hpLogo4} alt="Startup Advisor" className="carousel-logo" />
-            <img src={hpLogo5} alt="Director" className="carousel-logo" />
+            {/* Set 3 */}
+            <img src={hpLogo1} alt="Cyber Ambassador" className="carousel-logo" />
+            <img src={hpLogo2} alt="Regional Mentor" className="carousel-logo" />
+            <img src={hpLogo3} alt="Global Mentor" className="carousel-logo" />
+            <img src={hpLogo4} alt="Startup Advisor" className="carousel-logo" />
+            {/* Set 4 */}
+            <img src={hpLogo1} alt="Cyber Ambassador" className="carousel-logo" />
+            <img src={hpLogo2} alt="Regional Mentor" className="carousel-logo" />
+            <img src={hpLogo3} alt="Global Mentor" className="carousel-logo" />
+            <img src={hpLogo4} alt="Startup Advisor" className="carousel-logo" />
           </div>
         </div>
       </section>
@@ -545,14 +553,14 @@ function App() {
           <div className="manifesto-content-grid chapter-4 manifesto-reveal" style={{ marginTop: '8rem' }}>
             <div className="manifesto-right">
               <p>
-                Rajit serves as the Director of Institutional Development & Strategic Management at the Rajadhani Group of Educational Institutions. Here, he spearheads institutional scaling, international industry collaborations, innovative academic blueprints, and macro branding strategies.
+                Rajit Karunakaran leads ProBiz Knowledge Center with a vision of transforming organizations through strategic consulting, design thinking, mentoring, and experiential learning. With over three decades of international corporate experience across India and the MENA region, he combines practical business insight with innovative leadership to help organizations achieve sustainable growth.
               </p>
             </div>
             <div className="manifesto-left">
               <div className="manifesto-number-container">
                 <span className="manifesto-big-number">04</span>
                 <span className="manifesto-chapter">CHAPTER 04</span>
-                <span className="manifesto-journey chapter-4-title">Current Executive<br/>Mandate</span>
+                <span className="manifesto-journey chapter-4-title">Leadership Vision &<br/>Strategic Impact</span>
               </div>
             </div>
           </div>
@@ -690,7 +698,7 @@ function App() {
           </div>
           
           <div className="copyright">
-            <p>© All Rights Reserved | Developed by <a href="https://mostech.ae/" target="_blank" rel="noopener noreferrer">Mostech Business Solutions</a></p>
+            <p>© All Rights Reserved | Developed by <a href="https://mostech.ae/" target="_blank" rel="noopener noreferrer">Mostech</a> Business Solutions</p>
           </div>
         </div>
       </footer>

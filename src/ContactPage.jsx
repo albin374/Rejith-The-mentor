@@ -60,7 +60,7 @@ const ContactPage = () => {
                 </div>
                 <div className="channel-text-wrapper">
                   <span className="channel-label">Phone & WhatsApp</span>
-                  <span className="channel-value">+1 (234) 567-890</span>
+                  <span className="channel-value">+91 81118 97897</span>
                 </div>
               </div>
 
@@ -190,7 +190,7 @@ const ContactPage = () => {
           </div>
           
           <div className="copyright">
-            <p>© All Rights Reserved | Developed by <a href="https://mostech.ae/" target="_blank" rel="noopener noreferrer">Mostech Business Solutions</a></p>
+            <p>© All Rights Reserved | Developed by <a href="https://mostech.ae/" target="_blank" rel="noopener noreferrer">Mostech</a> Business Solutions</p>
           </div>
         </div>
       </footer>

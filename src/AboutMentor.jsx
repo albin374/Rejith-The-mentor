@@ -173,21 +173,20 @@ const AboutMentor = () => {
           <div className="mandate-card dark-card-solid">
             <span className="pill-badge dark">EXECUTIVE MANDATE</span>
             <h2 className="mandate-heading">
-              Director of Institutional Development & Strategic Management<br />
-              <span className="italic-serif">at Rajadhani Group</span>
+              Leadership Through Innovation
             </h2>
             <p className="mandate-text">
-              Rajit serves as the Director of Institutional Development & Strategic Management at the Rajadhani Group of Educational Institutions. Here, he spearheads institutional scaling, international industry collaborations, innovative academic blueprints, and macro branding strategies.
+              Rajit drives organizational excellence by combining strategic vision, leadership development, and innovative thinking to help institutions and businesses achieve sustainable growth and long-term success.
             </p>
             <hr className="mandate-divider" />
             <div className="mandate-stats-new">
               <div className="stat-block-new">
-                <h4 className="serif-title">Global</h4>
-                <p>OPERATIONS SCALE</p>
+                <h4 className="serif-title">STRATEGIC</h4>
+                <p>LEADERSHIP</p>
               </div>
               <div className="stat-block-new">
-                <h4 className="serif-title">Strategic</h4>
-                <p>GROWTH LEADERSHIP</p>
+                <h4 className="serif-title">SUSTAINABLE</h4>
+                <p>GROWTH</p>
               </div>
             </div>
           </div>
@@ -237,7 +236,7 @@ const AboutMentor = () => {
           </div>
           
           <div className="copyright">
-            <p>© All Rights Reserved | Developed by <a href="https://mostech.ae/" target="_blank" rel="noopener noreferrer">Mostech Business Solutions</a></p>
+            <p>© All Rights Reserved | Developed by <a href="https://mostech.ae/" target="_blank" rel="noopener noreferrer">Mostech</a> Business Solutions</p>
           </div>
         </div>
       </footer>
