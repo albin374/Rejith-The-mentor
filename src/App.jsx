@@ -36,6 +36,7 @@ import RecognitionPage from './RecognitionPage';
 import './App.css';
 import rajitPortrait from './assets/rajit_portrait.png';
 import bannerImg from './assets/media/banner imge .png';
+import mobileBannerImg from './assets/media/mobile banner .png';
 import tedxVideo from './assets/tedx_video.png';
 import bookCover from './assets/book_cover.png';
 import img1 from './assets/media/WhatsApp Image 2026-07-10 at 19.41.42.jpeg';
@@ -216,7 +217,7 @@ function App() {
 
       <Navbar />
 
-      <section className="hero" style={{ '--mobile-hero-bg': `url("${bannerImg}")` }}>
+      <section className="hero" style={{ '--mobile-hero-bg': `url("${mobileBannerImg}")` }}>
         <div className="container hero-container hero-grid">
           <div className="hero-content">
             <h4 className="hero-credentials" style={{ fontWeight: 600, color: 'var(--primary-dark)', marginBottom: '0.5rem', textTransform: 'uppercase', letterSpacing: '1px' }}>

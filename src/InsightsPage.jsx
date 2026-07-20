@@ -36,47 +36,13 @@ const InsightsPage = () => {
           </div>
         </section>
 
-        {/* Venture I */}
-        <section className="venture-section">
-          <div className="venture-container">
-            <div className="venture-image-wrapper">
-              <img src={venture1Img} alt="Centriq Academy" className="venture-image" />
-            </div>
-            <div className="venture-content">
-              <span className="ins-overline">Foundational Venture I</span>
-              <h2 className="venture-title">Centriq Academy for Training<br />& Mentoring Pvt. Ltd.</h2>
-              <p className="venture-desc">
-                Serving as a premier hub for capability development, Centriq Academy represents a strategic commitment to workforce preparation. We bridge the gap between academic theory and institutional requirements, delivering bespoke mentoring programs that foster high-performance cultures across diverse sectors.
-              </p>
-              <div className="venture-features">
-                <div className="venture-feature">
-                  <div className="venture-feature-icon">
-                    <BookOpen size={24} />
-                  </div>
-                  <div className="venture-feature-text">
-                    <h4>Pedagogical Excellence</h4>
-                    <p>Methodologies rooted in psychometric precision and real-world application.</p>
-                  </div>
-                </div>
-                <div className="venture-feature">
-                  <div className="venture-feature-icon">
-                    <Target size={24} />
-                  </div>
-                  <div className="venture-feature-text">
-                    <h4>Executive Mentoring</h4>
-                    <p>Cultivating the next generation of leadership through structured guidance.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
 
-        {/* Venture II */}
+
+        {/* Venture I */}
         <section className="venture-section alt">
           <div className="venture-container">
             <div className="venture-content">
-              <span className="ins-overline">Foundational Venture II</span>
+              <span className="ins-overline">Foundational Venture I</span>
               <h2 className="venture-title">Probiz Knowledge Centre</h2>
               <p className="venture-desc">
                 Probiz is an elite advisory house focused on corporate strategy and critical human capital interventions. We serve as the intellectual engine for organizational turnarounds, specializing in the alignment of systemic infrastructure with ambitious growth mandates.
