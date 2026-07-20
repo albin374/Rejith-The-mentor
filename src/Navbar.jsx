@@ -2,10 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { Link as RouterLink, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import logoImg from './assets/media/logo.png_2K_202607141547.png';
+import footerLogoImg from './assets/media/logo_footer-removebg-preview.png';
 
 export default function Navbar({ transparent = false }) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   const location = useLocation();
 
   useEffect(() => {
@@ -17,9 +19,14 @@ export default function Navbar({ transparent = false }) {
         setIsScrolled(false);
       }
     };
+    const handleResize = () => setIsMobile(window.innerWidth <= 768);
 
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
 
   return (
@@ -30,7 +37,7 @@ export default function Navbar({ transparent = false }) {
       >
         <div className="nav-logo">
           <RouterLink to="/">
-            <img src={logoImg} alt="Rajit Karunakaran Logo" style={{ height: '50px', objectFit: 'contain' }} />
+            <img src={(isMobile && location.pathname === '/' && !isScrolled) ? footerLogoImg : logoImg} alt="Rajit Karunakaran Logo" style={{ height: '50px', objectFit: 'contain' }} />
           </RouterLink>
         </div>
         
@@ -51,7 +58,7 @@ export default function Navbar({ transparent = false }) {
 
         {/* Mobile Menu Toggle */}
         <button className="mobile-menu-btn" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
-          {isMobileMenuOpen ? <X size={24} color="#0f172a" /> : <Menu size={24} color="#0f172a" />}
+          {isMobileMenuOpen ? <X size={24} color={location.pathname === '/' && !isScrolled ? "#ffffff" : "#0f172a"} /> : <Menu size={24} color={location.pathname === '/' && !isScrolled ? "#ffffff" : "#0f172a"} />}
         </button>
       </nav>
 
