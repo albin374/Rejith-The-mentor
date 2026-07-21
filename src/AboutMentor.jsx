@@ -29,8 +29,8 @@ const AboutMentor = () => {
               A strategist with three decades of cross-industry expertise, Rajit Karunakaran bridges the gap between corporate excellence and transformative organizational design.
             </p>
             <div className="hero-btns">
-              <Link to="/about"><button className="btn btn-primary">Read Full Bio</button></Link>
-              <a href="#"><button className="btn btn-secondary btn-outline">Download Executive CV</button></a>
+              <a href="#journey"><button className="btn btn-primary">Read Full Bio</button></a>
+              <a href="https://www.linkedin.com/in/rajitknair" target="_blank" rel="noopener noreferrer"><button className="btn btn-secondary btn-outline">Download Executive CV</button></a>
             </div>
           </div>
           <div className="about-hero-image">
@@ -41,7 +41,7 @@ const AboutMentor = () => {
       </section>
 
       {/* The Journey Section */}
-      <section className="journey-section">
+      <section id="journey" className="journey-section">
         <div className="container journey-grid-timeline">
           <div className="journey-left-col">
             <h2 className="journey-heading-serif">The Journey</h2>
