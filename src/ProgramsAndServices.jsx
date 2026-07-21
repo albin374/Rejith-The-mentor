@@ -39,7 +39,7 @@ const ProgramsAndServices = () => {
         <div className="container service-grid">
           <div className="service-content">
             <h2>Corporate Training &<br />Workforce Upskilling</h2>
-            <span className="service-tagline">BUILDING ELITE CAPABILITY. DRIVING MARKET-LEADING PERFORMANCE.</span>
+            <span className="service-tagline">BUILDING ELITE CAPABILITY.<br />DRIVING MARKET-LEADING PERFORMANCE.</span>
 
             <div className="offering-cards">
               <div className="offering-card">

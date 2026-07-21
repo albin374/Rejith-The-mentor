@@ -72,7 +72,7 @@ const AboutMentor = () => {
             <div className="timeline-item">
               <div className="timeline-connector"></div>
               <div className="timeline-card quote-timeline-card">
-                <Quote size={40} className="quote-mark-icon top-quote" />
+                <Quote size={28} className="quote-mark-icon top-quote" />
                 <p className="timeline-quote-text">
                   The true power of a framework lies not in its constraints, but in the immersive freedom it provides to innovate within a structured reality.
                 </p>

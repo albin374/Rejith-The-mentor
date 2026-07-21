@@ -546,7 +546,7 @@
 @media (max-width: 768px) {
   .about-hero {
   padding: 8rem 1.5rem 4rem;
-  background: var(--white);
+  background: linear-gradient(rgba(10, 25, 47, 0.7), rgba(10, 25, 47, 0.8)), var(--mobile-about-bg) center/cover no-repeat;
   min-height: 80vh;
   display: flex;
   align-items: center;
@@ -562,7 +562,7 @@
   font-family: 'Outfit', sans-serif;
   line-height: 1.2;
   margin-bottom: 1.5rem;
-  color: var(--primary-dark);
+  color: #ffffff;
 }
 
   .hero-btns {
@@ -578,16 +578,16 @@
   .about-hero-content p {
   font-size: 1.1rem;
   line-height: 1.7;
-  color: var(--text-muted);
+  color: rgba(255, 255, 255, 0.8);
   margin-bottom: 2.5rem;
   max-width: 90%;
 }
 
   .about-hero-content .pill-badge {
-    background: transparent;
-    border: 1px solid var(--primary-dark);
-    color: var(--primary-dark);
-    font-weight: 800;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #ffffff;
+    font-weight: 500;
   }
   
   .hide-on-mobile {
@@ -641,7 +641,7 @@
   }
   .timeline-quote-text {
     font-size: 1rem;
-    margin: 0;
+    margin: 1.5rem 0 0 0;
     text-align: left;
   }
 }
