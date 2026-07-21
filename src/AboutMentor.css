@@ -545,7 +545,7 @@
 
 @media (max-width: 768px) {
   .about-hero {
-  padding: 8rem 4rem 6rem;
+  padding: 8rem 1.5rem 4rem;
   background: var(--white);
   min-height: 80vh;
   display: flex;
@@ -557,10 +557,10 @@
   }
   
   .about-hero-content h1 {
-  font-size: 3.5rem;
+  font-size: 2.5rem;
   font-weight: 500;
   font-family: 'Outfit', sans-serif;
-  line-height: 1.1;
+  line-height: 1.2;
   margin-bottom: 1.5rem;
   color: var(--primary-dark);
 }
@@ -595,16 +595,16 @@
   }
 
   .journey-section, .shaping-future-section {
-  padding: 6rem 4rem;
+  padding: 4rem 1.5rem;
   background-color: var(--primary-dark);
 }
   .ecosystem-section {
-  padding: 6rem 4rem;
+  padding: 4rem 1.5rem;
   background-color: var(--white);
 }
   
   .mandate-section {
-  padding: 6rem 4rem;
+  padding: 4rem 1.5rem;
   background: var(--white);
 }
   .mandate-section .container {
