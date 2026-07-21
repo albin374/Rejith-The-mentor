@@ -239,7 +239,7 @@ function App() {
               <RouterLink to="/contact" className="btn btn-primary">
                 Book a Strategic Session
               </RouterLink>
-              <a href="#profile" className="btn btn-secondary btn-outline">
+              <a href="https://www.linkedin.com/in/rajitknair" target="_blank" rel="noopener noreferrer" className="btn btn-secondary btn-outline">
                 Download Executive Profile
               </a>
             </div>

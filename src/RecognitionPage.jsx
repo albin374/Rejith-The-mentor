@@ -2,7 +2,7 @@ import footerLogoImg from './assets/media/logo_footer-removebg-preview.png';
 import { FaWhatsapp, FaFacebookF, FaInstagram, FaLinkedinIn, FaYoutube } from 'react-icons/fa';
 import React, { useState, useEffect } from 'react';
 import Navbar from './Navbar';
-import {  Menu, X, Award, Users, BookOpen, ShieldCheck, Star, Building  } from "lucide-react";
+import {  Menu, X, Award, Users, BookOpen, ShieldCheck, Star, Building, Building2  } from "lucide-react";
 import { Link } from 'react-router-dom';
 import ScrollStack, { ScrollStackItem } from './ScrollStack';
 import './RecognitionPage.css';
@@ -11,6 +11,7 @@ import govImg from './assets/media/gov_image_2026.jpeg';
 import recBannerImg1 from './assets/media/rec_banner_image.jpeg';
 import recBannerImg2 from './assets/media/rec_banner_image_2.jpeg';
 import recBannerImg3 from './assets/media/rec_banner_image_3.jpeg';
+import b5Img from './assets/media/b5.jpg';
 
 const bannerImages = [recBannerImg1, recBannerImg2, recBannerImg3];
 
@@ -51,6 +52,55 @@ const RecognitionPage = () => {
                   className={`rec-hero-image ${idx === currentSlide ? 'active' : ''}`} 
                 />
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* IAAP Fellowship Section */}
+        <section className="iaap-section">
+          {/* Background dot pattern */}
+          <div className="iaap-bg-pattern"></div>
+          
+          <div className="iaap-container">
+            <div className="iaap-text-side">
+              <div className="iaap-overline">
+                <span className="iaap-dot"></span>
+                <span className="iaap-line"></span>
+                INTERNATIONAL ENGAGEMENT
+              </div>
+              <h2 className="iaap-heading">
+                International Association of Accounting Professionals <span className="iaap-gold">(IAAP)</span>, United Kingdom
+              </h2>
+              <div className="iaap-desc">
+                <p>Honoured Rajit Karunakaran for his contributions to the accounting fraternity with a Hon. Fellowship on 13th February 2018.</p>
+                <p>The fellowship was conferred by Hon. Fabian Hamilton, member of the British Parliament and Shadow Minister for Arms & Disarmament, United Kingdom in the presence of Malcom Trotter, CEO, IAAP & IAB.</p>
+                <p>This is for the first time in history of IAAP, such an event was conducted outside the British Parliament.</p>
+              </div>
+            </div>
+
+            <div className="iaap-image-side">
+              <div className="iaap-image-card">
+                <img src={b5Img} alt="IAAP Fellowship Ceremony" className="iaap-image" />
+                <div className="iaap-stats-panel">
+                  <div className="iaap-stat">
+                    <div className="iaap-stat-icon"><Award size={20} /></div>
+                    <h4>Hon. Fellowship</h4>
+                    <p>13th February 2018</p>
+                  </div>
+                  <div className="iaap-stat-divider"></div>
+                  <div className="iaap-stat">
+                    <div className="iaap-stat-icon"><Building2 size={20} /></div>
+                    <h4>British Parliament</h4>
+                    <p>London, United Kingdom</p>
+                  </div>
+                  <div className="iaap-stat-divider"></div>
+                  <div className="iaap-stat">
+                    <div className="iaap-stat-icon"><Users size={20} /></div>
+                    <h4>Conferred by</h4>
+                    <p>Hon. Fabian Hamilton</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>

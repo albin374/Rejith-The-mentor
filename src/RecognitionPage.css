@@ -258,7 +258,387 @@
 }
 
 .gov-text {
+  transition: opacity 1s ease-in-out;
+}
+
+.rec-hero-image.active {
+  opacity: 1;
+}
+
+.rec-hero-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 4rem;
+  font-weight: 500;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  color: var(--color-text-main);
+}
+
+.rec-hero-title .text-primary {
+  color: var(--color-primary);
+}
+
+.rec-hero-desc {
+  font-size: 1.125rem;
+  color: var(--color-text-light);
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+/* Cards Grid */
+.rec-grid-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem 6rem;
+}
+
+.rec-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .rec-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .rec-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.rec-card {
+  background: var(--color-primary-dark);
+  padding: 2.5rem 2rem;
+  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.rec-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+}
+
+.rec-card-icon {
+  color: var(--white, #fff);
+  margin-bottom: 1.5rem;
+}
+
+.rec-card-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  color: var(--white, #fff);
+}
+
+.rec-card-desc {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin-bottom: 2rem;
+  flex-grow: 1;
+}
+
+.rec-card-desc strong {
+  color: var(--white, #fff);
+}
+
+.rec-card-badge {
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  color: var(--white, #fff) !important;
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  align-self: flex-start;
+}
+
+.rec-card-watermark {
+  position: absolute;
+  top: -1rem;
+  right: -1rem;
+  color: rgba(255, 255, 255, 0.05);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.rec-card-watermark svg {
+  width: 120px;
+  height: 120px;
+}
+
+.rec-card > * {
+  z-index: 1;
+  position: relative;
+}
+
+/* Governance Section */
+.gov-section {
+  background-color: var(--white);
+  padding: 6rem 2rem;
+  border-top: 1px solid var(--border-light);
+}
+
+.gov-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .gov-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.gov-image-wrapper {
+  width: 100%;
+}
+
+.gov-image {
+  width: 100%;
+  height: auto;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  border-radius: 0px;
+}
+
+.gov-content {
+  max-width: 500px;
+}
+
+.gov-overline {
+  color: var(--color-primary);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.gov-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(1.2rem, 3.5vw, 2.25rem);
+  font-weight: 500;
+  margin-bottom: 2rem;
+  line-height: 1.2;
+  text-align: left !important;
+  white-space: nowrap;
+}
+
+.gov-quote {
+  border-left: 3px solid var(--color-primary);
+  padding-left: 1.5rem;
+  margin-bottom: 2rem;
+  font-family: 'Outfit', sans-serif;
+  font-style: normal;
+  font-size: 1.125rem;
+  color: var(--color-text-light);
+  line-height: 1.6;
+}
+
+.gov-text {
   color: var(--color-text-light);
   line-height: 1.6;
   font-size: 0.95rem;
 }
+
+/* IAAP Fellowship Section */
+
+.iaap-section {
+  padding: 8rem 0;
+  background-color: var(--primary-dark);
+  color: var(--white);
+  overflow: hidden;
+}
+
+.iaap-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 4rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: center;
+}
+
+.iaap-overline {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: #eab308;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  margin-bottom: 1.5rem;
+}
+
+.iaap-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #eab308;
+  border-radius: 50%;
+}
+
+.iaap-line {
+  width: 40px;
+  height: 2px;
+  background-color: #eab308;
+}
+
+.iaap-heading {
+  font-size: 2.8rem;
+  font-family: 'Georgia', serif;
+  line-height: 1.3;
+  margin-bottom: 2.5rem;
+  color: var(--white);
+  font-weight: bold;
+}
+
+.iaap-gold {
+  color: #eab308;
+}
+
+.iaap-desc p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.iaap-image-side {
+  position: relative;
+}
+
+.iaap-image-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 1rem;
+  position: relative;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.iaap-image-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle at top right, rgba(234, 179, 8, 0.4), transparent 70%);
+  border-top-right-radius: 16px;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.iaap-image {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+
+.iaap-stats-panel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(10, 25, 47, 0.6);
+  border-radius: 12px;
+  padding: 1.5rem 2rem;
+  margin-top: 1rem;
+  position: relative;
+  z-index: 1;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.iaap-stat {
+  text-align: center;
+  flex: 1;
+}
+
+.iaap-stat-icon {
+  color: #eab308;
+  margin-bottom: 0.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.iaap-stat-icon svg {
+  border: 1px solid rgba(234, 179, 8, 0.3);
+  border-radius: 50%;
+  padding: 8px;
+  width: 44px;
+  height: 44px;
+}
+
+.iaap-stat h4 {
+  color: white;
+  font-size: 0.9rem;
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+}
+
+.iaap-stat p {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+.iaap-stat-divider {
+  width: 1px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.1);
+  margin: 0 1rem;
+}
+
+@media (max-width: 992px) {
+  .iaap-container {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+    padding: 0 2rem;
+  }
+  .iaap-stats-panel {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .iaap-stat-divider {
+    width: 80%;
+    height: 1px;
+    margin: 0 auto;
+  }
+}
+
+
+.iaap-section {
+  position: relative;
+}
+.iaap-bg-pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 400px;
+  height: 400px;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.15) 2px, transparent 2px);
+  background-size: 24px 24px;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
