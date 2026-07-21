@@ -12,6 +12,9 @@
 .text-white { color: #ffffff; }
 .text-gray-300 { color: #cbd5e1; }
 .text-blue-300 { color: #93c5fd; }
+.bg-blue-section { background-color: var(--primary-dark); }
+.bg-blue-section .section-title-center { color: var(--white); }
+.bg-blue-section .service-tagline-center { color: var(--white) !important; }
 .text-center { text-align: center; }
 .text-left { text-align: left; }
 .mx-auto { margin-left: auto; margin-right: auto; }

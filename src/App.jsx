@@ -36,7 +36,7 @@ import RecognitionPage from './RecognitionPage';
 import './App.css';
 import rajitPortrait from './assets/rajit_portrait.png';
 import bannerImg from './assets/media/banner imge .png';
-import mobileBannerImg from './assets/media/mobile banner .png';
+import mobileBannerImg from './assets/media/mobile banner 3.png';
 import tedxVideo from './assets/tedx_video.png';
 import bookCover from './assets/book_cover.png';
 import img1 from './assets/media/WhatsApp Image 2026-07-10 at 19.41.42.jpeg';
@@ -287,7 +287,7 @@ function App() {
 
 
       {/* Introduction Section (New) */}
-      <section className="intro-section">
+      <section className="intro-section bg-primary-dark">
         <div className="intro-container">
           {/* Left: Image with floating box */}
           <div className="intro-image-wrapper">
@@ -367,7 +367,7 @@ function App() {
       </section>
 
       {/* Books Section */}
-      <section className="books-section" style={{ padding: '8rem 0', backgroundColor: '#ffffff' }}>
+      <section className="books-section bg-primary-dark" style={{ padding: '8rem 0' }}>
         <div style={{ maxWidth: '1500px', margin: '0 auto', padding: '0 2rem' }}>
           
           <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
@@ -482,8 +482,8 @@ function App() {
 
       {/* Manifesto Section */}
       <section 
-        className="manifesto-section"
-        style={{ padding: '6rem 0', backgroundColor: '#f8fafc' }}
+        className="manifesto-section bg-primary-dark"
+        style={{ padding: '6rem 0' }}
       >
         <div className="container">
           <div className="manifesto-header manifesto-reveal">
@@ -592,7 +592,7 @@ function App() {
       </section>
 
       {/* Insights Section */}
-      <section className="insights-section" style={{ padding: '6rem 0', backgroundColor: '#f8fafc' }}>
+      <section className="insights-section bg-primary-dark" style={{ padding: '6rem 0' }}>
         <div className="container">
           <div className="insights-header">
             <div className="insights-title-area">

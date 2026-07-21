@@ -65,10 +65,10 @@ const ProgramsAndServices = () => {
       </section>
 
       {/* Service 2: Management Consulting */}
-      <section className="service-section bg-white text-center">
+      <section className="service-section bg-blue-section text-center">
         <div className="container">
           <h2 className="section-title-center">Management Consulting &<br />Strategic Advisory</h2>
-          <span className="service-tagline-center font-normal normal-case text-blue-600">Clarity in complexity. Velocity in execution.</span>
+          <span className="service-tagline-center font-normal normal-case text-white">Clarity in complexity. Velocity in execution.</span>
 
           <div className="academy-split-grid mt-12">
             <div className="academy-card-left text-left">

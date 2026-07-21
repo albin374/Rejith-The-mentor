@@ -23,7 +23,7 @@ const AboutMentor = () => {
             <h1>
               Architecting Change.<br />
               Inspiring Innovation.<br />
-              <span className="text-blue">Masterfully Told.</span>
+              <span>Masterfully Told.</span>
             </h1>
             <p className="hide-on-mobile">
               A strategist with three decades of cross-industry expertise, Rajit Karunakaran bridges the gap between corporate excellence and transformative organizational design.

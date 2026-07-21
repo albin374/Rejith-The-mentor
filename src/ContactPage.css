@@ -90,6 +90,7 @@
 /* Contact Main Section */
 .contact-main-section {
   padding: 6rem 2rem;
+  background-color: var(--primary-dark);
 }
 
 .contact-container {
@@ -112,7 +113,7 @@
   font-size: 2.25rem;
   font-weight: 600;
   margin-bottom: 2.5rem;
-  color: var(--color-text-main);
+  color: #ffffff;
   text-align: left !important;
 }
 
@@ -132,9 +133,9 @@
   width: 56px;
   height: 56px;
   border-radius: 16px;
-  background-color: rgba(37, 99, 235, 0.08);
+  background-color: rgba(255, 255, 255, 0.1);
   border: none;
-  color: var(--color-primary);
+  color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -143,9 +144,9 @@
 }
 
 .channel-item:hover .channel-icon-wrapper {
-  background-color: var(--color-primary);
+  background-color: rgba(255, 255, 255, 0.2);
   color: white;
-  box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.2);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
 }
 
 .channel-text-wrapper {
@@ -156,14 +157,14 @@
 .channel-label {
   font-size: 0.8rem;
   font-weight: 500;
-  color: #6b7280;
+  color: #cbd5e1;
   margin-bottom: 0.25rem;
 }
 
 .channel-value {
   font-size: 1.1rem;
   font-weight: 600;
-  color: var(--color-text-main);
+  color: #ffffff;
 }
 
 .office-presence {

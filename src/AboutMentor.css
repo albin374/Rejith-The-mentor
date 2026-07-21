@@ -1,7 +1,7 @@
 .about-page {
   font-family: 'Inter', sans-serif;
   color: var(--text-main);
-  background-color: var(--accent);
+  background-color: var(--white);
 }
 
 /* Navbar */
@@ -36,16 +36,16 @@
 }
 
 .about-navbar .nav-links a.active {
-  color: var(--primary-dark);
+  color: var(--white);
   font-weight: 500;
-  border-bottom: 2px solid var(--primary-dark);
+  border-bottom: 2px solid var(--white);
   padding-bottom: 4px;
 }
 
 /* Hero Section */
 .about-hero {
   padding: 8rem 4rem 6rem;
-  background: var(--accent);
+  background: var(--white);
   min-height: 80vh;
   display: flex;
   align-items: center;
@@ -68,7 +68,7 @@
 }
 
 .text-blue {
-  color: var(--primary-dark);
+  color: #3b82f6;
 }
 
 .about-hero-content p {
@@ -129,7 +129,7 @@
 /* Journey Section */
 .journey-section {
   padding: 6rem 4rem;
-  background-color: var(--white);
+  background-color: var(--primary-dark);
 }
 
 .journey-grid-timeline {
@@ -142,7 +142,7 @@
   font-family: 'Outfit', sans-serif;
   font-size: 3.5rem;
   font-weight: 500;
-  color: var(--primary-dark);
+  color: var(--white);
   margin-bottom: 1rem;
 }
 
@@ -155,7 +155,7 @@
 
 .journey-subheading {
   font-size: 1.25rem;
-  color: var(--text-muted);
+  color: rgba(255, 255, 255, 0.9);
   line-height: 1.6;
 }
 
@@ -276,7 +276,7 @@
 /* Ecosystem Section */
 .ecosystem-section {
   padding: 6rem 4rem;
-  background: var(--accent);
+  background: var(--white);
 }
 
 .ecosystem-grid {
@@ -344,7 +344,7 @@
 /* Shaping Future */
 .shaping-future-section {
   padding: 6rem 4rem;
-  background-color: var(--white);
+  background-color: var(--primary-dark);
 }
 
 .shaping-future-section .section-header {
@@ -356,7 +356,11 @@
   font-size: 2.5rem;
   font-weight: 500;
   margin-bottom: 1rem;
-  color: var(--primary-dark);
+  color: var(--white);
+}
+
+.shaping-future-section .section-header p {
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .future-grid {
@@ -415,7 +419,7 @@
 /* Executive Mandate */
 .mandate-section {
   padding: 6rem 4rem;
-  background: var(--accent);
+  background: var(--white);
 }
 
 .dark-card-solid {
@@ -541,25 +545,25 @@
 
 @media (max-width: 768px) {
   .about-hero {
-    padding: 8rem 2rem 4rem;
-    background-color: #1e293b;
-    background-image: var(--mobile-about-bg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center 20%;
-    position: relative;
-  }
+  padding: 8rem 4rem 6rem;
+  background: var(--white);
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+}
   
   .about-hero-image {
     display: none !important;
   }
   
   .about-hero-content h1 {
-    font-size: 2.25rem;
-    font-weight: 800;
-    color: #ffffff;
-    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
-  }
+  font-size: 3.5rem;
+  font-weight: 500;
+  font-family: 'Outfit', sans-serif;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  color: var(--primary-dark);
+}
 
   .hero-btns {
     flex-direction: column;
@@ -568,36 +572,41 @@
   }
 
   .about-hero-content .text-blue {
-    color: #ffffff;
-  }
+  color: #3b82f6;
+}
 
   .about-hero-content p {
-    font-size: 1.15rem;
-    font-weight: 600;
-    color: #ffffff;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
-  }
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+  margin-bottom: 2.5rem;
+  max-width: 90%;
+}
 
   .about-hero-content .pill-badge {
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(4px);
-    border: 1px solid #ffffff;
-    color: #ffffff;
+    background: transparent;
+    border: 1px solid var(--primary-dark);
+    color: var(--primary-dark);
     font-weight: 800;
-    text-shadow: 0 2px 5px rgba(0,0,0,0.5);
   }
   
   .hide-on-mobile {
     display: none !important;
   }
 
-  .journey-section, .ecosystem-section, .shaping-future-section {
-    padding: 4rem 1.5rem;
-  }
+  .journey-section, .shaping-future-section {
+  padding: 6rem 4rem;
+  background-color: var(--primary-dark);
+}
+  .ecosystem-section {
+  padding: 6rem 4rem;
+  background-color: var(--white);
+}
   
   .mandate-section {
-    padding: 2rem 0 0 0; /* No horizontal or bottom padding to seamlessly connect to footer */
-  }
+  padding: 6rem 4rem;
+  background: var(--white);
+}
   .mandate-section .container {
     padding: 0;
     max-width: 100%;
@@ -636,3 +645,5 @@
     text-align: left;
   }
 }
+
+
