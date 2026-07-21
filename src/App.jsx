@@ -366,8 +366,8 @@ function App() {
         </div>
       </section>
 
-      {/* Books Section */}
-      <section className="books-section bg-primary-dark" style={{ padding: '8rem 0' }}>
+      {/* Author Intro Section */}
+      <section className="author-intro-section" style={{ padding: '8rem 0 4rem 0', backgroundColor: '#ffffff' }}>
         <div style={{ maxWidth: '1500px', margin: '0 auto', padding: '0 2rem' }}>
           
           <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
@@ -388,7 +388,12 @@ function App() {
               <img src={newCover3} alt="The House of Mirrors" style={{ width: '100%', height: 'auto', display: 'block', borderRadius: '4px' }} />
             </div>
           </div>
+        </div>
+      </section>
 
+      {/* Books Details Section */}
+      <section className="books-details-section bg-primary-dark" style={{ padding: '4rem 0 8rem 0' }}>
+        <div style={{ maxWidth: '1500px', margin: '0 auto', padding: '0 2rem' }}>
           <div className="books-grid">
             {/* Book 1 */}
             <div className="book-row scroll-reveal">
@@ -699,7 +704,7 @@ function App() {
           </div>
           
           <div className="copyright">
-            <p>© All Rights Reserved | Developed by <a href="https://mostech.ae/" target="_blank" rel="noopener noreferrer">Mostech</a> Business Solutions</p>
+            <p>© All Rights Reserved | Developed by <strong><a href="https://mostech.ae/" target="_blank" rel="noopener noreferrer">Mostech Business Solutions</a></strong></p>
           </div>
         </div>
       </footer>

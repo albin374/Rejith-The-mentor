@@ -207,7 +207,7 @@ const ProgramsAndServices = () => {
           </div>
           
           <div className="copyright">
-            <p>© All Rights Reserved | Developed by <a href="https://mostech.ae/" target="_blank" rel="noopener noreferrer">Mostech</a> Business Solutions</p>
+            <p>© All Rights Reserved | Developed by <strong><a href="https://mostech.ae/" target="_blank" rel="noopener noreferrer">Mostech Business Solutions</a></strong></p>
           </div>
         </div>
       </footer>

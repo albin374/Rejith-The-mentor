@@ -404,7 +404,7 @@
 /* Keynote Section */
 .keynote-section-new {
   padding: 7rem 4rem;
-  background-color: #0a192f;
+  background-color: var(--primary-dark);
 }
 
 .keynote-content-left {
@@ -530,3 +530,10 @@
     padding: 2rem 1.5rem;
   }
 }
+
+.keynote-section-new .btn-primary:hover {
+  color: #ffffff !important;
+  border-color: #ffffff !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+}
+
